@@ -8,7 +8,7 @@ Makefile:8: *** insufficient number of arguments (2) to function 'patsubst'.  St
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Sep  7 13:31:56 2021
+# Make data base, printed on Fri Sep 10 14:42:42 2021
 
 # Variables
 
@@ -53,7 +53,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:44951
+JOURNAL_STREAM = 8:42877
 # makefile (from 'Makefile', line 4)
 CFLAGS = -I.
 # environment
@@ -63,7 +63,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 2453922153115311
+STARSHIP_SESSION_KEY = 2652422900182212
 # environment
 JAVA_HOME = //usr/lib/jdk/jdk-16.0.2
 # automatic
@@ -79,13 +79,15 @@ XDG_DATA_DIRS = /usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/d
 # environment
 CS314_USE_DATABASE_TUNNEL = true
 # environment
+AUTOJUMP_SOURCED = 1
+# environment
 DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1729
+MANAGERPID = 1770
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-04efe3e8-8bf7-4dd0-83d3-9bd21b1905a7.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f864dc4d-85f3-4783-ab57-69f72126cb57.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
@@ -93,13 +95,13 @@ GSETTINGS_SCHEMA_DIR = /snap/code/73/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = //usr/lib/jdk/jdk-16.0.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/db/.autojump/bin://usr/lib/jdk/jdk-16.0.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # environment
 GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/1977,unix/db-Linux:/tmp/.ICE-unix/1977
+SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/1995,unix/db-Linux:/tmp/.ICE-unix/1995
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -121,7 +123,7 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7aa628-8aa5-479f-8975-39db82160823&iid=ad7aa628-8aa5-479f-8975-39db82160823&sid=ad7aa628-8aa5-479f-8975-39db82160823","uploadToServer":true}
 # environment
-INVOCATION_ID = 41671410fcd94c78b79f75a30d96cebc
+INVOCATION_ID = 5e9fb41da5b54012a565eddb7daee3cd
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/73/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -147,7 +149,7 @@ PWD = /home/db/School/CS356-Security/CS356PA1
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1941
+SSH_AGENT_PID = 1961
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # environment
@@ -257,11 +259,11 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/b07c0c9c_30c9_465f_9fdf_f63721bca214
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/7799225f_362a_4787_b84b_e06b1119fea0
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.106
+GNOME_TERMINAL_SERVICE = :1.278
 # default
 SUFFIXES := 
 # environment
@@ -275,20 +277,22 @@ WINDOWPATH = 2
 # default
 .RECIPEPREFIX := 
 # environment
+AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
+# environment
 LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 32312
+VSCODE_PID = 33462
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
 FILES = 
+ 
 # variable set hash-table stats:
-# Load=136/1024=13%, Rehash=0, Collisions=19/150=13%
+# Load=138/1024=13%, Rehash=0, Collisions=19/152=12%
 
 # Pattern-specific Variable Values
- 
 
 # No pattern-specific variable values.
 
@@ -337,6 +341,6 @@ Makefile:
 # strcache performance: lookups = 18 / hit rate = 22%
 # hash-table stats:
 # Load=14/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Tue Sep  7 13:31:56 2021
+# Finished Make data base on Fri Sep 10 14:42:42 2021
 
  
