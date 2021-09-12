@@ -8,29 +8,39 @@ enum mode{encrypt, decrypt};
 class Cipher{
     public:
         static Cipher* createCipherFromArgs(int argc, char** argv);
-        virtual string encrypt(FILE*) = 0;
-        virtual string decrypt(FILE*) = 0;
         virtual void runCipher();
 
+
     private:
-        string clearText;
-        string cipherText;
-        void writeFile(string file) throw(CipherException);
-        string readFile(FILE*) throw(CipherException);
+        std::string clearText;
+        std::string cipherText;
+        virtual std::string encrypt(FILE*) = 0;
+        virtual std::string decrypt(FILE*) = 0;
 
 };
 
 class BlockCipher:public Cipher{
+    public:
+        // Constructors, Destructors
+        BlockCipher();
+        ~BlockCipher();
+
+    private:
 
 };
 
 class StreamCipher:public Cipher{
+    public:
+        // Constructors, Destructors
+        StreamCipher();
+        ~StreamCipher();
 
+    private:
 };
 
 class CipherException{
     public:
 
         //Constructors
-        CipherException(string key, string value);
+        CipherException(std::string key, std::string value);
 };

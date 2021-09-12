@@ -2,18 +2,19 @@
 # Dan Butcher
 
 
-FILES = encrypt.cpp main.cpp
-HEADER_FILES = encrypt.h
+FILES = encrypt.cpp utilities.cpp main.cpp
+HEADER_FILES = encrypt.h utilities.h
 SRC_FOLDER=src/
 OBJECTS_FOLDER=obj/
 COMPILE = gcc
 CFLAGS = -I${SRC_FOLDER}
 
-SOURCE_FILES = $(patsubst %, $(SRC_FOLDER)%, $(FILES))
+SOURCE_FILES = $(patsubst %, ./$(SRC_FOLDER)%, $(FILES))
 MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
 
+# This not working.
 $(OBJECTS): $(SRC_FOLDER)*.cpp $(HEADERS)
 	$(COMPILE) -c $< -o $@
 

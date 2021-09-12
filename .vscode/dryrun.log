@@ -1,6 +1,22 @@
-make --dry-run --always-make --keep-going --print-directory
+make build --dry-run --keep-going --print-directory
 make: Entering directory '/home/db/School/CS356-Security/CS356PA1'
-make: Leaving directory '/home/db/School/CS356-Security/CS356PA1'
+gcc -c src/encrypt.h -o src/encrypt.cpp
  
-Makefile:8: *** insufficient number of arguments (2) to function 'patsubst'.  Stop.
+make: Circular src/utilities.cpp <- src/utilities.cpp dependency dropped.
+make: Circular src/encrypt.cpp <- src/utilities.cpp dependency dropped.
+make: Circular src/encrypt.cpp <- src/encrypt.cpp dependency dropped.
+ 
+src/encrypt.h:1:10: warning: #pragma once in main file
+    1 | # pragma once
+      |          ^~~~
+src/encrypt.h:2:10: fatal error: cstdio: No such file or directory
+    2 | #include <cstdio> //FILE
+      |          ^~~~~~~~
+compilation terminated.
+ 
+make: *** [Makefile:18: src/encrypt.cpp] Error 1
+make: Failed to remake makefile 'Makefile'.
+ 
+rm obj/utilities.cpp Makefile.o obj/encrypt.cpp obj/main.cpp Makefile.cpp
+make: Leaving directory '/home/db/School/CS356-Security/CS356PA1'
  
