@@ -11,8 +11,9 @@ int main(int argc, char** argv){
         FILE* inputFile = Utilities::openFile();
         FILE* outputFile = Utilities::openFile();
         FILE* keyFile = Utilities::openFile();
-    } catch(UtilityException, CipherException)
+    } catch(UtilityException, CipherException) {
+
+    }
+
     
-    
-    
-}
+};
