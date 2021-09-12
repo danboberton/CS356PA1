@@ -2,8 +2,8 @@
 # Dan Butcher
 
 
-FILES = encrypt.cpp main.cpp
-HEADER_FILES = encrypt.h
+FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
+HEADER_FILES = encrypt.h exception.h utilities.h
 SRC_FOLDER=src/
 OBJECTS_FOLDER=obj/
 COMPILE = gcc

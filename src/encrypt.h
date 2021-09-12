@@ -1,4 +1,6 @@
-# pragma once
+// encrypt.h
+
+#pragma once
 #include <cstdio> //FILE
 #include <string> //string
 
@@ -9,14 +11,15 @@ class Cipher{
         static Cipher* createCipherFromArgs(int argc, char** argv);
         virtual std::string encrypt(FILE*) = 0;
         virtual std::string decrypt(FILE*) = 0;
-        virtual void runCipher();
+        virtual void runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile) = 0;
+        virtual void setMode(char* cipherDirection);
+
 
     private:
         mode cipherMode;
         std::string clearText;
         std::string cipherText;
-        FILE* inputFile;
-        FILE* outputFile;
+      
 
 };
 
@@ -28,10 +31,3 @@ class StreamCipher:public Cipher{
 
 };
 
-class CipherException{
-    public:
-
-        //Constructors
-        CipherException(std::string value, std::string error);
-        CipherException(int value, std::string error);
-};

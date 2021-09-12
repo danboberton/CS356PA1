@@ -1,4 +1,5 @@
 #include "encrypt.h"
+#include "exception.h"
 
 
 /*
@@ -9,7 +10,7 @@ Arg Order:
 4 - keyfile
 5 - Mode of Operation (E, D)
 */
-Cipher* Cipher::createCipherFromArgs(int argc, char** argv) throw (CipherException){
+Cipher* Cipher::createCipherFromArgs(int argc, char** argv) {
     printf("Building cipher...\n");
 
     char typeChar;
@@ -25,6 +26,16 @@ Cipher* Cipher::createCipherFromArgs(int argc, char** argv) throw (CipherExcepti
 
 }
 
-void runCipher() throw(CipherException){
-
+void Cipher::setMode(char* cipherDirection) {
+    char modeFlag = tolower(cipherDirection[0]);
+    switch (modeFlag){
+        case 'e':
+            this->cipherMode = encrypt;
+            break;
+        case 'd':
+            this->cipherMode = decrypt;
+            break;
+        default:
+            throw CipherException(modeFlag, "Invalid encryption mode. Must be E or D.");
+    }
 }
