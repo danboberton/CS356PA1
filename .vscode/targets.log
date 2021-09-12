@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:8: *** insufficient number of arguments (2) to function 'patsubst'.  Stop.
+make: *** No rule to make target 'all'.  Stop.
  
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,11 +8,11 @@ Makefile:8: *** insufficient number of arguments (2) to function 'patsubst'.  St
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Sep 10 14:42:42 2021
+# Make data base, printed on Sun Sep 12 15:15:06 2021
 
 # Variables
 
-# environment
+# 'override' directive
 GNUMAKEFLAGS := 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -24,8 +24,6 @@ DESKTOP_SESSION = ubuntu
 .SHELLFLAGS := -c
 # environment
 XDG_SESSION_CLASS = user
-# makefile (from 'Makefile', line 6)
-SRC = /src
 # environment
 SNAP_COMMON = /var/snap/code/common
 # environment
@@ -53,9 +51,9 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:42877
-# makefile (from 'Makefile', line 4)
-CFLAGS = -I.
+JOURNAL_STREAM = 8:40799
+# makefile (from 'Makefile', line 10)
+CFLAGS = -I${SRC_FOLDER}
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -63,7 +61,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 2652422900182212
+STARSHIP_SESSION_KEY = 1153922379304762
 # environment
 JAVA_HOME = //usr/lib/jdk/jdk-16.0.2
 # automatic
@@ -85,9 +83,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1770
+MANAGERPID = 1908
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-f864dc4d-85f3-4783-ab57-69f72126cb57.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-773dfca8-0da3-465d-881f-1156d44327cb.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
@@ -101,7 +99,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/1995,unix/db-Linux:/tmp/.ICE-unix/1995
+SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/2128,unix/db-Linux:/tmp/.ICE-unix/2128
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -123,7 +121,7 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7aa628-8aa5-479f-8975-39db82160823&iid=ad7aa628-8aa5-479f-8975-39db82160823&sid=ad7aa628-8aa5-479f-8975-39db82160823","uploadToServer":true}
 # environment
-INVOCATION_ID = 5e9fb41da5b54012a565eddb7daee3cd
+INVOCATION_ID = 3f9198d3c1ca4367bf7429574a806dfd
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/73/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -146,14 +144,20 @@ VSCODE_PIPE_LOGGING = true
 SNAP_INSTANCE_KEY = 
 # environment
 PWD = /home/db/School/CS356-Security/CS356PA1
+# makefile (from 'Makefile', line 13)
+MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1961
+SSH_AGENT_PID = 2087
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
+# makefile (from 'Makefile', line 8)
+OBJECTS_FOLDER = obj/
 # environment
 GTK_MODULES = gail:atk-bridge
+# makefile (from 'Makefile', line 12)
+SOURCE_FILES = $(patsubst %, $(SRC_FOLDER)%, $(FILES))
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
@@ -172,6 +176,10 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 SNAP_CONTEXT = OjM8D5TgpvNa4xOb7KiMSGFzeIf1rmADohvVr1fZHDl7nrnJ9PVv
 # environment
 NVM_CD_FLAGS = -q
+# makefile (from 'Makefile', line 15)
+HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
+# makefile (from 'Makefile', line 9)
+COMPILE = gcc
 # environment
 ZSH = /home/db/.oh-my-zsh
 # environment
@@ -190,6 +198,8 @@ SNAP_REAL_HOME = /home/db
 COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
+# makefile (from 'Makefile', line 7)
+SRC_FOLDER = src/
 # default
 MAKECMDGOALS := all
 # environment
@@ -207,7 +217,7 @@ USER = db
 # environment
 SNAP_REVISION = 73
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := obj/encrypt.o
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -217,7 +227,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/db/School/CS356-Security
+OLDPWD = /home/db
 # default
 .VARIABLES := 
 # automatic
@@ -232,6 +242,8 @@ MFLAGS = -pqrR
 *D = $(patsubst %/,%,$(dir $*))
 # environment
 NVM_DIR = /home/db/.nvm
+# makefile (from 'Makefile', line 6)
+HEADER_FILES = encrypt.h exception.h utilities.h
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
 # environment
@@ -242,8 +254,6 @@ GDK_BACKEND = x11
 QT_ACCESSIBILITY = 1
 # environment
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
-# makefile (from 'Makefile', line 3)
-COMPILER = gcc
 # default
 MAKEFILES := 
 # environment
@@ -259,11 +269,11 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/7799225f_362a_4787_b84b_e06b1119fea0
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/a0f038e6_9932_4b97_8eb4_a13a3c3b1c35
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.278
+GNOME_TERMINAL_SERVICE = :1.140
 # default
 SUFFIXES := 
 # environment
@@ -276,6 +286,8 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
 .RECIPEPREFIX := 
+# makefile (from 'Makefile', line 14)
+OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
 AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
 # environment
@@ -283,14 +295,13 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 33462
+VSCODE_PID = 13582
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
-FILES = 
- 
+FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 # variable set hash-table stats:
-# Load=138/1024=13%, Rehash=0, Collisions=19/152=12%
+# Load=144/1024=14%, Rehash=0, Collisions=21/181=12%
 
 # Pattern-specific Variable Values
 
@@ -298,9 +309,11 @@ FILES =
 
 # Directories
 
+ 
 # . (device 66305, inode 11276315): 8 files, no impossibilities.
+# src (device 66305, inode 12190189): 9 files, no impossibilities.
 
-# 8 files, no impossibilities in 1 directories.
+# 17 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -309,17 +322,71 @@ FILES =
 # Files
 
 # Not a target:
-all:
-#  Command line target.
+src/utilities.cpp:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
-Makefile:
+all:
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+obj/encrypt.o: src/utilities.cpp src/exception.cpp src/encrypt.cpp src/main.cpp src/encrypt.h src/exception.h src/utilities.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(COMPILE) -c $< -o $@
+
+obj/exception.o: src/utilities.cpp src/exception.cpp src/encrypt.cpp src/main.cpp src/encrypt.h src/exception.h src/utilities.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(COMPILE) -c $< -o $@
+
+obj/main.o: src/utilities.cpp src/exception.cpp src/encrypt.cpp src/main.cpp src/encrypt.h src/exception.h src/utilities.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(COMPILE) -c $< -o $@
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-09-12 15:13:48.253214468
+#  File has been updated.
+#  Successfully updated.
+
+build: obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 21):
+	$(COMPILE) -o $@ $^ $(CFLAGS)
+
+# Not a target:
+src/encrypt.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/exception.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+obj/utilities.o: src/utilities.cpp src/exception.cpp src/encrypt.cpp src/main.cpp src/encrypt.h src/exception.h src/utilities.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 18):
+	$(COMPILE) -c $< -o $@
 
 # Not a target:
 .DEFAULT:
@@ -327,20 +394,65 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+src/encrypt.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/exception.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+package:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 24):
+	rm -f $(OBJECTS_FOLDER)*.o
+
+# Not a target:
+src/main.cpp:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+testMake:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 29):
+	echo Source: $(SOURCE_FILES)
+	echo Objects: $(OBJECTS)
+	echo Headers: $(HEADERS)
+
+# Not a target:
+src/utilities.h:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/5=0%
+# Load=19/1024=2%, Rehash=0, Collisions=0/40=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 14 / storage = 118 B / avg = 8 B
-# current buf: size = 8162 B / used = 118 B / count = 14 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 35 / storage = 392 B / avg = 11 B
+# current buf: size = 8162 B / used = 392 B / count = 35 / avg = 11 B
 
-# strcache performance: lookups = 18 / hit rate = 22%
+# strcache performance: lookups = 54 / hit rate = 35%
 # hash-table stats:
-# Load=14/8192=0%, Rehash=0, Collisions=1/18=6%
-# Finished Make data base on Fri Sep 10 14:42:42 2021
+# Load=35/8192=0%, Rehash=0, Collisions=2/54=4%
+# Finished Make data base on Sun Sep 12 15:15:06 2021
 
  
