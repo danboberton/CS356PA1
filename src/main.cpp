@@ -1,20 +1,18 @@
 #include "encrypt.h"
+#include "utilities.h"
 
 
-Cipher* makeCipher(int argc, char** argv){
-    Cipher* cipher = NULL;
-    try{
-        cipher = Cipher::createCipherFromArgs(argc, argv);
-    } catch (CipherException e){
-        // TODO catch
-    }
-    return cipher;
-}
 
 int main(int argc, char** argv){
 
     printf("[Dan Butcher Programming Assignment 1]\n[CS356]\n");
-    Cipher* cipher = makeCipher(argc, argv);
-    cipher->runCipher();
+    try {
+        Cipher* cipher = Cipher::createCipherFromArgs(argc, argv);
+        FILE* inputFile = Utilities::openFile();
+        FILE* outputFile = Utilities::openFile();
+        FILE* keyFile = Utilities::openFile();
+    } catch(UtilityException, CipherException)
+    
+    
     
 }

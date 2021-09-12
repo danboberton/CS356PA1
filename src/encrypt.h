@@ -2,21 +2,21 @@
 #include <cstdio> //FILE
 #include <string> //string
 
-enum cipher{block, stream};
 enum mode{encrypt, decrypt};
 
 class Cipher{
     public:
         static Cipher* createCipherFromArgs(int argc, char** argv);
-        virtual string encrypt(FILE*) = 0;
-        virtual string decrypt(FILE*) = 0;
+        virtual std::string encrypt(FILE*) = 0;
+        virtual std::string decrypt(FILE*) = 0;
         virtual void runCipher();
 
     private:
-        string clearText;
-        string cipherText;
-        void writeFile(string file) throw(CipherException);
-        string readFile(FILE*) throw(CipherException);
+        mode cipherMode;
+        std::string clearText;
+        std::string cipherText;
+        FILE* inputFile;
+        FILE* outputFile;
 
 };
 
@@ -32,5 +32,6 @@ class CipherException{
     public:
 
         //Constructors
-        CipherException(string key, string value);
+        CipherException(std::string value, std::string error);
+        CipherException(int value, std::string error);
 };
