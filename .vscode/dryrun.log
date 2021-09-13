@@ -1,5 +1,13 @@
 make build --dry-run --keep-going --print-directory
 make: Entering directory '/home/db/School/CS356-Security/CS356PA1'
-g++ -o DanB_356PA1 obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o -Isrc/
+mkdir -p obj
+g++ -c src/encrypt.cpp -o obj/encrypt.o
+mkdir -p obj
+g++ -c src/exception.cpp -o obj/exception.o
+mkdir -p obj
+g++ -c src/utilities.cpp -o obj/utilities.o
+mkdir -p obj
+g++ -c src/main.cpp -o obj/main.o
+g++ -g -static -o DanB_356PA1 obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o -Isrc/
 make: Leaving directory '/home/db/School/CS356-Security/CS356PA1'
  

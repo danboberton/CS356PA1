@@ -21,7 +21,7 @@ $(OBJECTS_FOLDER)%.o: $(SRC_FOLDER)%.cpp $(HEADERS)
 	$(COMPILE) -c $< -o $@
 
 build: $(OBJECTS)
-	$(COMPILE) -o $(TARGET) $^ $(CFLAGS)
+	$(COMPILE) -g -static -o $(TARGET) $^ $(CFLAGS)
 
 clean:
 	rm -f $(OBJECTS_FOLDER)*.o

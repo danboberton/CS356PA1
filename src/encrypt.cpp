@@ -54,7 +54,7 @@ Cipher* Cipher::createCipherFromArgs(int argc, char** argv) {
 
     char typeChar;
     
-    if (argc != 6) throw new CipherException(argc, "Invalid Number of Arguments, should be 5.");
+    // if (argc != 6) throw new CipherException(argc, "Invalid Number of Arguments, should be 5.");
 
     typeChar = tolower(argv[6][0]);
     switch (typeChar){
