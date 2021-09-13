@@ -10,23 +10,37 @@ Arg Order:
 4 - keyfile
 5 - Mode of Operation (E, D)
 */
+Cipher::Cipher(){
+
+}
+
+Cipher::~Cipher(){
+    NULL;
+}
 
 BlockCipher::BlockCipher(){
-
 };
+
+BlockCipher::~BlockCipher(){
+
+}
 
 StreamCipher::StreamCipher(){
 
 };
 
+StreamCipher::~StreamCipher(){
+
+}
+
 void Cipher::runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     
     try{
         switch (this->cipherMode){
-        case encrypt:
+        case modeEncrypt:
             this->encrypt(inputFile, outputFile, keyFile);
             break;
-        case decrypt:
+        case modeDecrypt:
             this->decrypt(inputFile, outputFile, keyFile);
         }   
     } catch(CipherException e){
@@ -61,10 +75,10 @@ void Cipher::setMode(char* cipherDirection) {
     char modeFlag = tolower(cipherDirection[0]);
     switch (modeFlag){
         case 'e':
-            this->cipherMode = encrypt;
+            this->cipherMode = modeEncrypt;
             break;
         case 'd':
-            this->cipherMode = decrypt;
+            this->cipherMode = modeDecrypt;
             break;
         default:
             throw CipherException(modeFlag, "Invalid encryption mode. Must be E or D.");
@@ -120,6 +134,6 @@ void Cipher::encryptBlock(int* position, const int BLOCK_SIZE, char* key, char* 
 
     for (int i = 0; i < BLOCK_SIZE; i++){
         // TODO stuck here
-        outputArray[*position] = encryptByte();
+        // outputArray[*position] = encryptByte();
     }
 }

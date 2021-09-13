@@ -13,5 +13,6 @@ class Utilities{
         static FILE* prepFileForWrite(char* filePath);
         static int getFileSizeInBytes(FILE* file);
         static char* createCharArraySizeBytes(int size);
+        static void allocateBufferSizeOfFilePadded(FILE* file, char* outputBuffer, int pad);
 };
 

@@ -21,6 +21,8 @@ FILE* Utilities::prepFileForWrite(char* filePath){
     } catch (...){
         throw new CipherException(filePath, "Unable to prep file for write.");
     }
+
+    return fileStream;
 }
 
 int Utilities::getFileSizeInBytes(FILE* file){

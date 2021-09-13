@@ -14,7 +14,8 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
 
-$(OBJECTS): $(SRC_FOLDER)*.cpp $(HEADERS)
+$(OBJECTS_FOLDER)%.o: $(SRC_FOLDER)%.cpp $(HEADERS)
+	@mkdir -p $(@D)
 	$(COMPILE) -c $< -o $@
 
 build: $(OBJECTS)

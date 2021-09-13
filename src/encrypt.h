@@ -6,10 +6,12 @@
 #include <cstdio> //FILE
 #include <string> //string
 
-enum mode{encrypt, decrypt};
+enum mode{modeEncrypt, modeDecrypt};
 
 class Cipher{
     public:
+        Cipher();
+        virtual ~Cipher();
         static Cipher* createCipherFromArgs(int argc, char** argv);
         virtual void encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile) = 0;
         virtual void decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile) = 0;
@@ -17,15 +19,19 @@ class Cipher{
         virtual void setMode(char* cipherDirection);
 
     private:
-        mode cipherMode;
 
     protected:
+        mode cipherMode;
+        int cipherID;
         char* getKey(int keySizeInBytes, FILE* keyFile);
+        void encryptBlock(int* position, const int BLOCK_SIZE, char* key, char* outputArray);
+
 };
 
-class BlockCipher:public Cipher{
+class BlockCipher:public Cipher::Cipher{
     public:
         BlockCipher();
+        virtual ~BlockCipher();
         void runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile);
 
     private:
@@ -35,9 +41,10 @@ class BlockCipher:public Cipher{
         
 };
 
-class StreamCipher:public Cipher{
+class StreamCipher:public Cipher::Cipher{
     public:
         StreamCipher();
+        ~StreamCipher();
         void runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile);
 
     private:

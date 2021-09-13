@@ -31,6 +31,6 @@ int main(int argc, char** argv){
     Utilities::closeFile(outputFile);
     Utilities::closeFile(keyFile);
 
-    printf("(exit)\n")
+    printf("(exit)\n");
     
 };
