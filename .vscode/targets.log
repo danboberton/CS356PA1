@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep 13 10:44:33 2021
+# Make data base, printed on Mon Sep 13 12:11:06 2021
 
 # Variables
 
@@ -30,6 +30,8 @@ SNAP_COMMON = /var/snap/code/common
 XDG_SESSION_TYPE = x11
 # environment
 VSCODE_LOG_NATIVE = false
+# makefile (from 'Makefile', line 7)
+TARGET = DanB_356PA1
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # automatic
@@ -52,7 +54,7 @@ VTE_VERSION = 6003
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 JOURNAL_STREAM = 8:47733
-# makefile (from 'Makefile', line 10)
+# makefile (from 'Makefile', line 11)
 CFLAGS = -I${SRC_FOLDER}
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
@@ -144,7 +146,7 @@ VSCODE_PIPE_LOGGING = true
 SNAP_INSTANCE_KEY = 
 # environment
 PWD = /home/db/School/CS356-Security/CS356PA1
-# makefile (from 'Makefile', line 13)
+# makefile (from 'Makefile', line 15)
 MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
 # default
 .LOADED := 
@@ -152,17 +154,18 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 SSH_AGENT_PID = 1995
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
-# makefile (from 'Makefile', line 8)
+# makefile (from 'Makefile', line 9)
 OBJECTS_FOLDER = obj/
 # environment
 GTK_MODULES = gail:atk-bridge
-# makefile (from 'Makefile', line 12)
+# makefile (from 'Makefile', line 14)
 SOURCE_FILES = $(patsubst %, $(SRC_FOLDER)%, $(FILES))
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
 HOME = /home/db
 # environment
+ 
 VSCODE_CLI = 1
 # environment
 VSCODE_CODE_CACHE_PATH = /home/db/.config/Code/CachedData/e7d7e9a9348e6a8cc8c03f877d39cb72e5dfb1ff
@@ -176,10 +179,10 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 SNAP_CONTEXT = OjM8D5TgpvNa4xOb7KiMSGFzeIf1rmADohvVr1fZHDl7nrnJ9PVv
 # environment
 NVM_CD_FLAGS = -q
-# makefile (from 'Makefile', line 15)
+# makefile (from 'Makefile', line 17)
 HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
-# makefile (from 'Makefile', line 9)
-COMPILE = gcc
+# makefile (from 'Makefile', line 10)
+COMPILE = g++
 # environment
 ZSH = /home/db/.oh-my-zsh
 # environment
@@ -198,7 +201,7 @@ SNAP_REAL_HOME = /home/db
 COLORTERM = truecolor
 # default
 MAKE = $(MAKE_COMMAND)
-# makefile (from 'Makefile', line 7)
+# makefile (from 'Makefile', line 8)
 SRC_FOLDER = src/
 # default
 MAKECMDGOALS := all
@@ -224,6 +227,8 @@ XDG_CURRENT_DESKTOP = Unity
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
+# makefile (from 'Makefile', line 12)
+INCLUDE_CSTDLIB = -lstdc++
 # default
 MAKE_COMMAND := make
 # environment
@@ -256,7 +261,6 @@ QT_ACCESSIBILITY = 1
 DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKEFILES := 
- 
 # environment
 SNAP_COOKIE = OjM8D5TgpvNa4xOb7KiMSGFzeIf1rmADohvVr1fZHDl7nrnJ9PVv
 # automatic
@@ -287,7 +291,7 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
 .RECIPEPREFIX := 
-# makefile (from 'Makefile', line 14)
+# makefile (from 'Makefile', line 16)
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
 AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
@@ -302,7 +306,7 @@ STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
 FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 # variable set hash-table stats:
-# Load=144/1024=14%, Rehash=0, Collisions=21/178=12%
+# Load=146/1024=14%, Rehash=0, Collisions=21/180=12%
 
 # Pattern-specific Variable Values
 
@@ -310,15 +314,15 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 
 # Directories
 
-# . (device 66305, inode 11276315): 8 files, no impossibilities.
+# . (device 66305, inode 11276315): 9 files, no impossibilities.
 # src (device 66305, inode 12190189): No files, no impossibilities so far.
 
-# 8 files, no impossibilities in 2 directories.
+# 9 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.cpp src/encrypt.h src/exception.h src/utilities.h
-#  recipe to execute (from 'Makefile', line 18):
+#  recipe to execute (from 'Makefile', line 20):
 	@mkdir -p $(@D)
 	$(COMPILE) -c $< -o $@
 
@@ -354,7 +358,7 @@ obj/main.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-09-13 10:44:30.914302556
+#  Last modified 2021-09-13 12:11:01.257585057
 #  File has been updated.
 #  Successfully updated.
 
@@ -362,9 +366,10 @@ build: obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 22):
-	$(COMPILE) -o $@ $^ $(CFLAGS)
+#  recipe to execute (from 'Makefile', line 24):
+	$(COMPILE) -o $(TARGET) $^ $(CFLAGS)
 
+ 
 # Not a target:
 obj/utilities.o:
 #  Implicit rule search has not been done.
@@ -386,14 +391,14 @@ clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 25):
+#  recipe to execute (from 'Makefile', line 27):
 	rm -f $(OBJECTS_FOLDER)*.o
 
 testMake:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 30):
+#  recipe to execute (from 'Makefile', line 32):
 	echo Source: $(SOURCE_FILES)
 	echo Objects: $(OBJECTS)
 	echo Headers: $(HEADERS)
@@ -406,12 +411,12 @@ testMake:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 26 / storage = 262 B / avg = 10 B
-# current buf: size = 8162 B / used = 262 B / count = 26 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 27 / storage = 266 B / avg = 9 B
+# current buf: size = 8162 B / used = 266 B / count = 27 / avg = 9 B
 
-# strcache performance: lookups = 35 / hit rate = 25%
+# strcache performance: lookups = 36 / hit rate = 25%
 # hash-table stats:
-# Load=26/8192=0%, Rehash=0, Collisions=1/35=3%
-# Finished Make data base on Mon Sep 13 10:44:33 2021
+# Load=27/8192=0%, Rehash=0, Collisions=1/36=3%
+# Finished Make data base on Mon Sep 13 12:11:06 2021
 
  

@@ -2,6 +2,8 @@
 
 #pragma once
 #include <string>
+#include <exception>
+
 
 class CipherException:public std::exception{
     public:

@@ -2,5 +2,17 @@
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
         "string": "cpp"
-    }
+    },
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/db/School/CS356-Security/CS356PA1",
+            "binaryPath": "/home/db/School/CS356-Security/CS356PA1/build",
+            "binaryArgs": []
+        },
+        {
+            "cwd": "/home/db/School/CS356-Security/CS356PA1",
+            "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
+            "binaryArgs": []
+        }
+    ]
 }

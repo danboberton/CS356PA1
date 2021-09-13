@@ -1,6 +1,13 @@
 // Exception.cpp
 
 #include "exception.h"
+CipherException::CipherException(std::string value, std::string error){
+
+}
+
+CipherException::CipherException(int valueInt, std::string error){
+    
+}
 
 void CipherException::printExecption(std::string context){
     

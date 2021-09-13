@@ -11,12 +11,13 @@ enum mode{modeEncrypt, modeDecrypt};
 class Cipher{
     public:
         Cipher();
-        virtual ~Cipher();
+        virtual ~Cipher() {};
         static Cipher* createCipherFromArgs(int argc, char** argv);
-        virtual void encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile) = 0;
-        virtual void decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile) = 0;
         virtual void runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile);
         virtual void setMode(char* cipherDirection);
+        virtual void encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile) = 0;
+        virtual void decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile) = 0;
+
 
     private:
 
@@ -25,31 +26,34 @@ class Cipher{
         int cipherID;
         char* getKey(int keySizeInBytes, FILE* keyFile);
         void encryptBlock(int* position, const int BLOCK_SIZE, char* key, char* outputArray);
-
+        
 };
 
-class BlockCipher:public Cipher::Cipher{
+class BlockCipher:public Cipher{
     public:
         BlockCipher();
-        virtual ~BlockCipher();
-        void runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile);
-
-    private:
+        ~BlockCipher();
         void encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile);
         void decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile);
+
+    protected:
+        
+        
+    private:
+        
         
         
 };
 
-class StreamCipher:public Cipher::Cipher{
+class StreamCipher:public Cipher{
     public:
         StreamCipher();
         ~StreamCipher();
-        void runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile);
-
-    private:
         void encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile);
         void decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile);
+
+    private:
+        
 
 };
 

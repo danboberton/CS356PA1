@@ -34,11 +34,16 @@ int Utilities::getFileSizeInBytes(FILE* file){
 
 // Creates a block of memory in the heap that is the size of the inputfile
 // padded with extra space on the end
-void allocateBufferSizeOfFilePadded(FILE* file, char* outputBuffer, int padBytes){
+void Utilities::allocateBufferSizeOfFilePadded(FILE* file, char* outputBuffer, int padBytes){
 
     int originFileSizeBytes = Utilities::getFileSizeInBytes(file);
     int amountToPad = padBytes - (originFileSizeBytes % padBytes);
 
     outputBuffer = (char*)malloc(sizeof(char) * (originFileSizeBytes + amountToPad));
     
+}
+
+// TODO write closefile
+void Utilities::closeFile(FILE* fileToClose){
+
 }

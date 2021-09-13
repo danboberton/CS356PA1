@@ -1,7 +1,6 @@
 #include "encrypt.h"
 #include "exception.h"
 
-
 /*
 Arg Order:
 1 - Block or Stream (B, S)
@@ -14,9 +13,9 @@ Cipher::Cipher(){
 
 }
 
-Cipher::~Cipher(){
-    NULL;
-}
+// Cipher::~Cipher(){
+//     NULL;
+// }
 
 BlockCipher::BlockCipher(){
 };
@@ -55,7 +54,7 @@ Cipher* Cipher::createCipherFromArgs(int argc, char** argv) {
 
     char typeChar;
     
-    if (argc != 6) throw CipherException(argc, "Invalid Number of Arguments, should be 5.");
+    if (argc != 6) throw new CipherException(argc, "Invalid Number of Arguments, should be 5.");
 
     typeChar = tolower(argv[6][0]);
     switch (typeChar){
@@ -111,6 +110,10 @@ void BlockCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     free(writeBuffer);
 }
 
+void BlockCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
+
+}
+
 char* Cipher::getKey(int sizeInBytes, FILE* keyFile){
     char* key = new char[sizeInBytes];
     int c;
@@ -136,4 +139,12 @@ void Cipher::encryptBlock(int* position, const int BLOCK_SIZE, char* key, char* 
         // TODO stuck here
         // outputArray[*position] = encryptByte();
     }
+}
+
+void StreamCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
+    
+}
+
+void StreamCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
+
 }

@@ -4,10 +4,12 @@
 
 FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 HEADER_FILES = encrypt.h exception.h utilities.h
+TARGET = DanB_356PA1
 SRC_FOLDER=src/
 OBJECTS_FOLDER=obj/
-COMPILE = gcc
+COMPILE = g++
 CFLAGS = -I${SRC_FOLDER}
+INCLUDE_CSTDLIB = -lstdc++
 
 SOURCE_FILES = $(patsubst %, $(SRC_FOLDER)%, $(FILES))
 MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
@@ -19,10 +21,11 @@ $(OBJECTS_FOLDER)%.o: $(SRC_FOLDER)%.cpp $(HEADERS)
 	$(COMPILE) -c $< -o $@
 
 build: $(OBJECTS)
-	$(COMPILE) -o $@ $^ $(CFLAGS)
+	$(COMPILE) -o $(TARGET) $^ $(CFLAGS)
 
 clean:
 	rm -f $(OBJECTS_FOLDER)*.o
+	rm $(TARGET)
 
 package:
 
