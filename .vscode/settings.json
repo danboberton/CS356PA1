@@ -1,7 +1,9 @@
 {
     "makefile.extensionOutputFolder": "./.vscode",
     "files.associations": {
-        "string": "cpp"
+        "string": "cpp",
+        "bitset": "cpp",
+        "*.tcc": "cpp"
     },
     "makefile.launchConfigurations": [
         {

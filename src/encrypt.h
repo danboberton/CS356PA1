@@ -5,6 +5,7 @@
 #include "utilities.h"
 #include <cstdio> //FILE
 #include <string> //string
+#include <bitset> //bitset class
 
 enum mode{modeEncrypt, modeDecrypt};
 
@@ -25,7 +26,6 @@ class Cipher{
         mode cipherMode;
         int cipherID;
         char* getKey(int keySizeInBytes, FILE* keyFile);
-        void encryptBlock(int* position, const int BLOCK_SIZE, char* key, char* outputArray);
         
 };
 
@@ -40,9 +40,12 @@ class BlockCipher:public Cipher{
         
         
     private:
-        
-        
-        
+        void getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYTES, char* workBlock, bool &endOfFile);
+        void encryptBlock(char* workBlock, const int BLOCK_SIZE, char* key);
+        void swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* key);
+        void unswapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char * key)
+        void saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile);
+         
 };
 
 class StreamCipher:public Cipher{
