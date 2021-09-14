@@ -50,14 +50,14 @@ void Cipher::runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile){
 }
 
 Cipher* Cipher::createCipherFromArgs(int argc, char** argv) {
-    printf("Building cipher...\n");
+    printf("[Building cipher...]\n");
 
     char typeChar;
-    char* switchType = argv[6];
+    char switchType = argv[1][0];
     
     if (argc != 6) throw CipherException(argc, "Invalid Number of Arguments, should be 5.");
 
-    typeChar = tolower(switchType[0]);
+    typeChar = tolower(switchType);
     switch (typeChar){
         case 'b':
             return new BlockCipher();

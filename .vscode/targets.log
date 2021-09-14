@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep 13 17:56:09 2021
+# Make data base, printed on Tue Sep 14 07:26:34 2021
 
 # Variables
 
@@ -55,7 +55,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:53327
+JOURNAL_STREAM = 8:50443
 # makefile (from 'Makefile', line 11)
 CFLAGS = -I${SRC_FOLDER}
 # environment
@@ -65,7 +65,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 2524418341714828
+STARSHIP_SESSION_KEY = 1565712973194632
 # environment
 JAVA_HOME = //usr/lib/jdk/jdk-16.0.2
 # automatic
@@ -87,9 +87,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1746
+MANAGERPID = 1779
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7b821ff1-e02e-4748-825f-ca2c4cef30af.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5bdaa7a3-7d38-4be1-b9ab-fcd0e31fd4d2.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
@@ -103,7 +103,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/1963,unix/db-Linux:/tmp/.ICE-unix/1963
+SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/2000,unix/db-Linux:/tmp/.ICE-unix/2000
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -125,7 +125,7 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7aa628-8aa5-479f-8975-39db82160823&iid=ad7aa628-8aa5-479f-8975-39db82160823&sid=ad7aa628-8aa5-479f-8975-39db82160823","uploadToServer":true}
 # environment
-INVOCATION_ID = 45a38a5bf21b4086bd659443a9981903
+INVOCATION_ID = 27c0fd037d1f41198e9e63c107e65831
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/73/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -153,7 +153,7 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1928
+SSH_AGENT_PID = 1966
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 9)
@@ -231,7 +231,7 @@ LESS = -R
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/db/School/CS370-OS/CS370HW1
+OLDPWD = /home/db
 # default
 .VARIABLES := 
 # automatic
@@ -273,11 +273,11 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/abdb0fbd_b677_4659_9f30_f95ae6dbc791
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/20293a99_73c8_47e5_b9e8_c836e51b747f
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.214
+GNOME_TERMINAL_SERVICE = :1.103
 # default
 SUFFIXES := 
 # environment
@@ -290,6 +290,7 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
 .RECIPEPREFIX := 
+ 
 # makefile (from 'Makefile', line 16)
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
@@ -299,7 +300,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 28845
+VSCODE_PID = 5580
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
@@ -313,11 +314,10 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 
 # Directories
 
-# . (device 66305, inode 11276315): 12 files, no impossibilities.
+# . (device 66305, inode 11276315): 11 files, no impossibilities.
 # src (device 66305, inode 12190189): No files, no impossibilities so far.
- 
 
-# 12 files, no impossibilities in 2 directories.
+# 11 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -411,12 +411,12 @@ testMake:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 30 / storage = 297 B / avg = 9 B
-# current buf: size = 8162 B / used = 297 B / count = 30 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 29 / storage = 285 B / avg = 9 B
+# current buf: size = 8162 B / used = 285 B / count = 29 / avg = 9 B
 
-# strcache performance: lookups = 39 / hit rate = 23%
+# strcache performance: lookups = 38 / hit rate = 23%
 # hash-table stats:
-# Load=30/8192=0%, Rehash=0, Collisions=1/39=3%
-# Finished Make data base on Mon Sep 13 17:56:09 2021
+# Load=29/8192=0%, Rehash=0, Collisions=1/38=3%
+# Finished Make data base on Tue Sep 14 07:26:34 2021
 
  

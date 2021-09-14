@@ -47,3 +47,10 @@ void Utilities::allocateBufferSizeOfFilePadded(FILE* file, char* outputBuffer, i
 void Utilities::closeFile(FILE* fileToClose){
 
 }
+
+void Utilities::printArgs(int argc, char** argv){
+    printf("%d arguments.\n", argc);
+    for (int i = 0; i < (argc); i++){
+        printf("Arg %d: %s\n",i , argv[i]);
+    };
+}

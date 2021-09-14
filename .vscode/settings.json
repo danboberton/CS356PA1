@@ -12,7 +12,7 @@
         {
             "cwd": "/home/db/School/CS356-Security/CS356PA1",
             "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
-            "binaryArgs": []
+            "binaryArgs": ["B", "${workspaceFolder}/testin.txt", "${workspaceFolder}/newOutFile.txt", "${workspaceFolder}/key.txt", "E"]
         }
     ]
 }

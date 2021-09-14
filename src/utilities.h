@@ -14,5 +14,6 @@ class Utilities{
         static int getFileSizeInBytes(FILE* file);
         static char* createCharArraySizeBytes(int size);
         static void allocateBufferSizeOfFilePadded(FILE* file, char* outputBuffer, int pad);
+        static void printArgs(int argc, char** argv);
 };
 
