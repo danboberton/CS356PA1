@@ -95,7 +95,7 @@ void BlockCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
         while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
             // Move workBlock pointer backwards?
-            encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
+            // encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
             swapBytes(workBlock, BLOCK_SIZE_BYTES, key);
             saveBlock(workBlock, BLOCK_SIZE_BYTES, outputFile);
         }
@@ -120,7 +120,7 @@ void BlockCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
         while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
             swapBytes(workBlock, BLOCK_SIZE_BYTES, key);
-            encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
+            // encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
             removePadding(workBlock, BLOCK_SIZE_BYTES, saveSize);
             saveBlock(workBlock, saveSize, outputFile);
         }
@@ -213,7 +213,7 @@ void BlockCipher::getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYT
 void BlockCipher::swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* key){
 
     char* startPtr = workBlock;
-    char* endPtr = workBlock + BLOCK_SIZE_BYTES;
+    char* endPtr = workBlock + (BLOCK_SIZE_BYTES - 1);
     char swapBuffer;
     char* keyPtr = key;
     int keyIncrement = 0;
