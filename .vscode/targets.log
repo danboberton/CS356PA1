@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Sep 14 07:26:34 2021
+# Make data base, printed on Tue Sep 14 14:28:23 2021
 
 # Variables
 
@@ -49,13 +49,13 @@ CURDIR := /home/db/School/CS356-Security/CS356PA1
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/73
+SNAP_DATA = /var/snap/code/74
 # environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:50443
+JOURNAL_STREAM = 8:49140
 # makefile (from 'Makefile', line 11)
 CFLAGS = -I${SRC_FOLDER}
 # environment
@@ -65,7 +65,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 1565712973194632
+STARSHIP_SESSION_KEY = 3889199042158720
 # environment
 JAVA_HOME = //usr/lib/jdk/jdk-16.0.2
 # automatic
@@ -87,13 +87,13 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1779
+MANAGERPID = 2042
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5bdaa7a3-7d38-4be1-b9ab-fcd0e31fd4d2.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-32ecdc2f-7590-4131-a70c-fffe5c3e3b86.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/73/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/74/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
@@ -103,19 +103,19 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/2000,unix/db-Linux:/tmp/.ICE-unix/2000
+SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/2269,unix/db-Linux:/tmp/.ICE-unix/2269
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/db/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/73
+SNAP = /snap/code/74
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
 BREAKPAD_DUMP_LOCATION = /home/db/.config/Code/exthost Crash Reports
 # environment
-SNAP_VERSION = e7d7e9a9
+SNAP_VERSION = 83bd43bc
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -125,9 +125,9 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7aa628-8aa5-479f-8975-39db82160823&iid=ad7aa628-8aa5-479f-8975-39db82160823&sid=ad7aa628-8aa5-479f-8975-39db82160823","uploadToServer":true}
 # environment
-INVOCATION_ID = 27c0fd037d1f41198e9e63c107e65831
+INVOCATION_ID = b78c2a98daed43b2ab475240d2ffcac7
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/73/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/74/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -153,7 +153,7 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1966
+SSH_AGENT_PID = 2234
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 9)
@@ -169,7 +169,7 @@ HOME = /home/db
 # environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/db/.config/Code/CachedData/e7d7e9a9348e6a8cc8c03f877d39cb72e5dfb1ff
+VSCODE_CODE_CACHE_PATH = /home/db/.config/Code/CachedData/83bd43bc519d15e50c4272c6cf5c1479df196a4d
 # environment
 LOGNAME = db
 # environment
@@ -209,7 +209,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/db/snap/code/73
+SNAP_USER_DATA = /home/db/snap/code/74
 # environment
 SHLVL = 1
 # environment
@@ -219,7 +219,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = db
 # environment
-SNAP_REVISION = 73
+SNAP_REVISION = 74
 # makefile
 .DEFAULT_GOAL := build
 # environment
@@ -237,7 +237,7 @@ OLDPWD = /home/db
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-2a5c2638-1.60.0-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-2a5c2638-1.60.1-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -273,7 +273,7 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/20293a99_73c8_47e5_b9e8_c836e51b747f
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f3cbf565_f025_45d6_b2b6_2e66f9cf099a
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -290,7 +290,6 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
 .RECIPEPREFIX := 
- 
 # makefile (from 'Makefile', line 16)
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
@@ -298,9 +297,10 @@ AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
 # environment
 LANG = C
 # environment
+ 
 TERM = xterm-256color
 # environment
-VSCODE_PID = 5580
+VSCODE_PID = 4788
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
@@ -314,10 +314,10 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 
 # Directories
 
-# . (device 66305, inode 11276315): 11 files, no impossibilities.
+# . (device 66305, inode 11276315): 14 files, no impossibilities.
 # src (device 66305, inode 12190189): No files, no impossibilities so far.
 
-# 11 files, no impossibilities in 2 directories.
+# 14 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -411,12 +411,12 @@ testMake:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 29 / storage = 285 B / avg = 9 B
-# current buf: size = 8162 B / used = 285 B / count = 29 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 32 / storage = 323 B / avg = 10 B
+# current buf: size = 8162 B / used = 323 B / count = 32 / avg = 10 B
 
-# strcache performance: lookups = 38 / hit rate = 23%
+# strcache performance: lookups = 41 / hit rate = 21%
 # hash-table stats:
-# Load=29/8192=0%, Rehash=0, Collisions=1/38=3%
-# Finished Make data base on Tue Sep 14 07:26:34 2021
+# Load=32/8192=0%, Rehash=0, Collisions=1/41=2%
+# Finished Make data base on Tue Sep 14 14:28:23 2021
 
  

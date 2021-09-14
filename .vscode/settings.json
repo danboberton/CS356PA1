@@ -3,7 +3,48 @@
     "files.associations": {
         "string": "cpp",
         "bitset": "cpp",
-        "*.tcc": "cpp"
+        "*.tcc": "cpp",
+        "array": "cpp",
+        "atomic": "cpp",
+        "bit": "cpp",
+        "cctype": "cpp",
+        "clocale": "cpp",
+        "cmath": "cpp",
+        "cstdarg": "cpp",
+        "cstddef": "cpp",
+        "cstdint": "cpp",
+        "cstdio": "cpp",
+        "cstdlib": "cpp",
+        "cwchar": "cpp",
+        "cwctype": "cpp",
+        "deque": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "exception": "cpp",
+        "algorithm": "cpp",
+        "functional": "cpp",
+        "iterator": "cpp",
+        "memory": "cpp",
+        "memory_resource": "cpp",
+        "numeric": "cpp",
+        "optional": "cpp",
+        "random": "cpp",
+        "string_view": "cpp",
+        "system_error": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "initializer_list": "cpp",
+        "iosfwd": "cpp",
+        "istream": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "ostream": "cpp",
+        "sstream": "cpp",
+        "stdexcept": "cpp",
+        "streambuf": "cpp",
+        "typeinfo": "cpp"
     },
     "makefile.launchConfigurations": [
         {
@@ -15,6 +56,11 @@
             "cwd": "/home/db/School/CS356-Security/CS356PA1",
             "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
             "binaryArgs": ["B", "${workspaceFolder}/testin.txt", "${workspaceFolder}/newOutFile.txt", "${workspaceFolder}/key.txt", "E"]
+        },
+        {
+            "cwd": "/home/db/School/CS356-Security/CS356PA1",
+            "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
+            "binaryArgs": ["B", "${workspaceFolder}/newOutFile.txt", "${workspaceFolder}/testinDecrypt.txt", "${workspaceFolder}/key.txt", "D"]
         }
     ]
 }

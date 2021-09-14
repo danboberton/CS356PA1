@@ -5,6 +5,7 @@
 #include <string> //string
 #include "exception.h" //CipherException
 #include <sys/stat.h> //stat
+#include <bitset> //bitset class
 
 class Utilities{
     public:
@@ -15,5 +16,9 @@ class Utilities{
         static char* createCharArraySizeBytes(int size);
         static void allocateBufferSizeOfFilePadded(FILE* file, char* outputBuffer, int pad);
         static void printArgs(int argc, char** argv);
+        static std::bitset<8> getBinaryByteArrayFromInt(int byte);
+        static std::bitset<128> getBitsetFromChars(char* string, int blockSize);
+        static char getCharFromBinaryByte(std::bitset<8> binary);
+
 };
 

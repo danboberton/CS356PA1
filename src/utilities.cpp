@@ -43,9 +43,9 @@ void Utilities::allocateBufferSizeOfFilePadded(FILE* file, char* outputBuffer, i
     
 }
 
-// TODO write closefile
-void Utilities::closeFile(FILE* fileToClose){
 
+void Utilities::closeFile(FILE* fileToClose){
+    fclose(fileToClose);
 }
 
 void Utilities::printArgs(int argc, char** argv){
@@ -53,4 +53,30 @@ void Utilities::printArgs(int argc, char** argv){
     for (int i = 0; i < (argc); i++){
         printf("Arg %d: %s\n",i , argv[i]);
     };
+}
+
+std::bitset<8> Utilities::getBinaryByteArrayFromInt(int byte){
+    return std::bitset<8>(byte);
+}
+
+std::bitset<128> Utilities::getBitsetFromChars(char* string, int blockSize){
+
+    std::bitset<8> bitsetBuffer;
+    std::bitset<128> resultBuffer;
+
+    for(size_t i = 0; i < blockSize; i++){
+        bitsetBuffer = getBinaryByteArrayFromInt((int)*(string + i));
+
+        for (size_t k = 0; k < 8; k++){
+            resultBuffer[(i*8)+k] = bitsetBuffer[k];
+        }
+    }
+
+    return resultBuffer;
+}
+
+char Utilities::getCharFromBinaryByte(std::bitset<8> binary){
+    ulong longInt = binary.to_ulong();
+    int regInt = (int)longInt;
+    return (char)regInt;
 }

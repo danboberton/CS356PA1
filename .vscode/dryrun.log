@@ -4,7 +4,6 @@ mkdir -p obj
 g++ -c -g src/encrypt.cpp -o obj/encrypt.o
 mkdir -p obj
 g++ -c -g src/exception.cpp -o obj/exception.o
- 
 mkdir -p obj
 g++ -c -g src/utilities.cpp -o obj/utilities.o
 mkdir -p obj

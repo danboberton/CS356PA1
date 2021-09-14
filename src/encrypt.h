@@ -43,8 +43,8 @@ class BlockCipher:public Cipher{
         void getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYTES, char* workBlock, bool &endOfFile);
         void encryptBlock(char* workBlock, const int BLOCK_SIZE, char* key);
         void swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* key);
-        void unswapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char * key)
         void saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile);
+        void removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveSize);
          
 };
 

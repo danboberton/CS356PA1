@@ -92,7 +92,7 @@ void BlockCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     bool endOfFile = false;
 
     try{
-        while(endOfFile){
+        while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
             // Move workBlock pointer backwards?
             encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
@@ -114,21 +114,22 @@ void BlockCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     char workBlock[BLOCK_SIZE_BYTES];
     char* key = Cipher::getKey(16, keyFile);
     bool endOfFile = false;
+    int saveSize = BLOCK_SIZE_BYTES;
 
     try{
-        while(endOfFile){
+        while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
-            unswapBytes(workBlock, BLOCK_SIZE_BYTES, key);
-            decryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
-            removePadding(workBlock);
-            saveBlock(workBlock, BLOCK_SIZE_BYTES, outputFile);
+            swapBytes(workBlock, BLOCK_SIZE_BYTES, key);
+            encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
+            removePadding(workBlock, BLOCK_SIZE_BYTES, saveSize);
+            saveBlock(workBlock, saveSize, outputFile);
         }
         
     } catch(CipherException){
         throw;
     } 
     catch(...){
-        throw CipherException("blockCipher Encryption", "Error in BlockCipher::encrypt");
+        throw CipherException("blockCipher Decryption", "Error in BlockCipher::decrypt");
     }
 
 }
@@ -153,23 +154,22 @@ char* Cipher::getKey(int sizeInBytes, FILE* keyFile){
 
 void BlockCipher::encryptBlock(char* workBlock, const int BLOCK_SIZE_BYTES, char* key){
     const size_t BLOCK_SIZE_BITS = BLOCK_SIZE_BYTES * 8;
-    std::string blockString(workBlock);
-    std::bitset<128> bitsetBlock(blockString);
-    std::string keyString(key);
-    std::bitset<128> bitsetKey(keyString);
+    
+    std::bitset<128> bitsetBlock = Utilities::getBitsetFromChars(workBlock, BLOCK_SIZE_BYTES);
+    std::bitset<128> bitsetKey = Utilities::getBitsetFromChars(key, BLOCK_SIZE_BYTES);
     std::bitset<128> result;
-    std::string resultString;
-    char* resultArray;
+    std::bitset<8> charBuffer;
 
     for(int i = 0; i < 128; i++){
         result[i] = bitsetBlock[i] ^ bitsetKey[i];
     }
 
-    resultString = result.to_string();
-    
-    // manually pull chars from string without null
-    for(int i = 0; i < BLOCK_SIZE_BYTES; i++){
-        *workBlock = resultString[i];
+    for(size_t i = 0; i < BLOCK_SIZE_BYTES; i++){
+        for (size_t k = 0; k < 8; k++){
+            charBuffer[k] = result[(i*8)+k];
+        }
+
+        *(workBlock + i) = Utilities::getCharFromBinaryByte(charBuffer);
     }
     
 }
@@ -189,18 +189,23 @@ void BlockCipher::getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYT
         curChar = fgetc(inputFile);
         if (curChar == EOF){
             endOfFile = true;
-            if (i == 0) break; // end of file, block not necessary
+
+            if (i == 0) {
+                break; // end of file, block not necessary
+                } 
 
             // Pad
             while(i < BLOCK_SIZE_BYTES){
-                *workBlock = '0X81';
+                *workBlock = 129;
                 i++;
                 workBlock++;
             }
+        } else {
+            *workBlock = curChar;
+            workBlock++;
         }
 
-        *workBlock = curChar;
-        workBlock++;
+        
     }    
     
 }
@@ -240,5 +245,14 @@ void BlockCipher::saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputF
 
     } catch(...){
         throw CipherException(outputFile->_fileno, "Error saving block in BlockCipher::saveBlock");
+    }
+}
+
+void BlockCipher::removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveSize){
+
+    for(int i = 0; i < BLOCK_SIZE_BITS; i++){
+        if (*(workBlock + i) == 129){
+            saveSize--;
+        }
     }
 }

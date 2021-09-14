@@ -15,7 +15,7 @@ int main(int argc, char** argv){
         cipher = Cipher::createCipherFromArgs(argc, argv);
         inputFile = Utilities::openFile(argv[2]);
         outputFile = Utilities::prepFileForWrite(argv[3]);
-        keyFile = Utilities::prepFileForWrite(argv[4]);
+        keyFile = Utilities::openFile(argv[4]);
         cipher->setMode(argv[5]);
     } catch(CipherException e) {
         e.printExecption("Error initializing arguments.");
@@ -32,7 +32,9 @@ int main(int argc, char** argv){
     Utilities::closeFile(inputFile);
     Utilities::closeFile(outputFile);
     Utilities::closeFile(keyFile);
+    delete cipher;
 
     printf("(exit)\n");
+    return 0;
     
 };
