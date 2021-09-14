@@ -9,7 +9,7 @@ SRC_FOLDER=src/
 OBJECTS_FOLDER=obj/
 COMPILE = g++
 CFLAGS = -I${SRC_FOLDER}
-INCLUDE_CSTDLIB = -lstdc++
+INCLUDE_CPP_STDLIB = -lstdc++
 
 SOURCE_FILES = $(patsubst %, $(SRC_FOLDER)%, $(FILES))
 MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
@@ -18,10 +18,10 @@ HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
 
 $(OBJECTS_FOLDER)%.o: $(SRC_FOLDER)%.cpp $(HEADERS)
 	@mkdir -p $(@D)
-	$(COMPILE) -c $< -o $@
+	$(COMPILE) -c -g $< -o $@
 
 build: $(OBJECTS)
-	$(COMPILE) -g -static -o $(TARGET) $^ $(CFLAGS)
+	$(COMPILE) -g -o $(TARGET) $^ $(CFLAGS)
 
 clean:
 	rm -f $(OBJECTS_FOLDER)*.o

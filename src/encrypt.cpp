@@ -53,10 +53,11 @@ Cipher* Cipher::createCipherFromArgs(int argc, char** argv) {
     printf("Building cipher...\n");
 
     char typeChar;
+    char* switchType = argv[6];
     
-    // if (argc != 6) throw new CipherException(argc, "Invalid Number of Arguments, should be 5.");
+    if (argc != 6) throw CipherException(argc, "Invalid Number of Arguments, should be 5.");
 
-    typeChar = tolower(argv[6][0]);
+    typeChar = tolower(switchType[0]);
     switch (typeChar){
         case 'b':
             return new BlockCipher();
@@ -65,7 +66,7 @@ Cipher* Cipher::createCipherFromArgs(int argc, char** argv) {
             return new StreamCipher();
             break;
         default:
-            throw new CipherException(typeChar, "Cipher type should be either (B) block or (S) stream.");
+           throw CipherException(typeChar, "Cipher type should be either (B) block or (S) stream.");
     }
 
 }

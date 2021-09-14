@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Mon Sep 13 12:27:46 2021
+# Make data base, printed on Mon Sep 13 17:56:09 2021
 
 # Variables
 
@@ -22,6 +22,8 @@ GNUMAKEFLAGS :=
 DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
+# makefile (from 'Makefile', line 12)
+INCLUDE_CPP_STDLIB = -lstdc++
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -53,7 +55,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:47733
+JOURNAL_STREAM = 8:53327
 # makefile (from 'Makefile', line 11)
 CFLAGS = -I${SRC_FOLDER}
 # environment
@@ -63,7 +65,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 6151202862523092
+STARSHIP_SESSION_KEY = 2524418341714828
 # environment
 JAVA_HOME = //usr/lib/jdk/jdk-16.0.2
 # automatic
@@ -85,9 +87,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 1807
+MANAGERPID = 1746
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-239280e4-205e-48aa-b351-f0ab5781165a.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-7b821ff1-e02e-4748-825f-ca2c4cef30af.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
@@ -101,7 +103,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/2029,unix/db-Linux:/tmp/.ICE-unix/2029
+SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/1963,unix/db-Linux:/tmp/.ICE-unix/1963
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -123,7 +125,7 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7aa628-8aa5-479f-8975-39db82160823&iid=ad7aa628-8aa5-479f-8975-39db82160823&sid=ad7aa628-8aa5-479f-8975-39db82160823","uploadToServer":true}
 # environment
-INVOCATION_ID = 34fbdd7323f64b59aa339ee19914187e
+INVOCATION_ID = 45a38a5bf21b4086bd659443a9981903
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/73/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -151,7 +153,7 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1995
+SSH_AGENT_PID = 1928
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 9)
@@ -226,12 +228,10 @@ XDG_CURRENT_DESKTOP = Unity
 LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
-# makefile (from 'Makefile', line 12)
-INCLUDE_CSTDLIB = -lstdc++
 # default
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/db
+OLDPWD = /home/db/School/CS370-OS/CS370HW1
 # default
 .VARIABLES := 
 # automatic
@@ -273,12 +273,11 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5753d86c_e585_41b1_bf1f_c5bedfd56afe
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/abdb0fbd_b677_4659_9f30_f95ae6dbc791
 # automatic
- 
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.106
+GNOME_TERMINAL_SERVICE = :1.214
 # default
 SUFFIXES := 
 # environment
@@ -300,7 +299,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 5891
+VSCODE_PID = 28845
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
@@ -314,17 +313,18 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 
 # Directories
 
-# . (device 66305, inode 11276315): 9 files, no impossibilities.
+# . (device 66305, inode 11276315): 12 files, no impossibilities.
 # src (device 66305, inode 12190189): No files, no impossibilities so far.
+ 
 
-# 9 files, no impossibilities in 2 directories.
+# 12 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.cpp src/encrypt.h src/exception.h src/utilities.h
 #  recipe to execute (from 'Makefile', line 20):
 	@mkdir -p $(@D)
-	$(COMPILE) -c $< -o $@
+	$(COMPILE) -c -g $< -o $@
 
 # 1 implicit rules, 0 (0.0%) terminal.
 
@@ -358,7 +358,7 @@ obj/main.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-09-13 12:27:42.270862236
+#  Last modified 2021-09-13 17:55:24.767209886
 #  File has been updated.
 #  Successfully updated.
 
@@ -367,7 +367,7 @@ build: obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o
 #  Modification time never checked.
 #  File has not been updated.
 #  recipe to execute (from 'Makefile', line 24):
-	$(COMPILE) -g -static -o $(TARGET) $^ $(CFLAGS)
+	$(COMPILE) -g -o $(TARGET) $^ $(CFLAGS)
 
 # Not a target:
 obj/utilities.o:
@@ -411,12 +411,12 @@ testMake:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 266 B / avg = 9 B
-# current buf: size = 8162 B / used = 266 B / count = 27 / avg = 9 B
+# strcache buffers: 1 (0) / strings = 30 / storage = 297 B / avg = 9 B
+# current buf: size = 8162 B / used = 297 B / count = 30 / avg = 9 B
 
-# strcache performance: lookups = 36 / hit rate = 25%
+# strcache performance: lookups = 39 / hit rate = 23%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=1/36=3%
-# Finished Make data base on Mon Sep 13 12:27:46 2021
+# Load=30/8192=0%, Rehash=0, Collisions=1/39=3%
+# Finished Make data base on Mon Sep 13 17:56:09 2021
 
  

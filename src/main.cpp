@@ -3,10 +3,10 @@
 #include "exception.h"
 
 int main(int argc, char** argv){
-    Cipher* cipher;
-    FILE* inputFile;
-    FILE* outputFile;
-    FILE* keyFile;
+    Cipher* cipher = NULL;
+    FILE* inputFile = NULL;
+    FILE* outputFile = NULL;
+    FILE* keyFile = NULL;
 
     printf("[Dan Butcher Programming Assignment 1]\n[CS356]\n");
     try {
