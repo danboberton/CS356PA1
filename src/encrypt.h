@@ -44,7 +44,7 @@ class BlockCipher:public Cipher{
         void encryptBlock(char* workBlock, const int BLOCK_SIZE, char* key);
         void swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* key);
         void saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile);
-        void removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveSize);
+        void removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveSize, bool &endOfFile);
          
 };
 

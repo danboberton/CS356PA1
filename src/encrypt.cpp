@@ -94,8 +94,7 @@ void BlockCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     try{
         while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
-            // Move workBlock pointer backwards?
-            // encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
+            encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
             swapBytes(workBlock, BLOCK_SIZE_BYTES, key);
             saveBlock(workBlock, BLOCK_SIZE_BYTES, outputFile);
         }
@@ -120,8 +119,8 @@ void BlockCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
         while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
             swapBytes(workBlock, BLOCK_SIZE_BYTES, key);
-            // encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
-            removePadding(workBlock, BLOCK_SIZE_BYTES, saveSize);
+            encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
+            removePadding(workBlock, BLOCK_SIZE_BYTES, saveSize, endOfFile);
             saveBlock(workBlock, saveSize, outputFile);
         }
         
@@ -183,6 +182,7 @@ void StreamCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
 }
 
 void BlockCipher::getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYTES, char* workBlock, bool &endOfFile){
+    int static blockCount = 0;
 
     char curChar;
     for (int i = 0; i < BLOCK_SIZE_BYTES; i++){
@@ -196,7 +196,7 @@ void BlockCipher::getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYT
 
             // Pad
             while(i < BLOCK_SIZE_BYTES){
-                *workBlock = 129;
+                *workBlock = 0;
                 i++;
                 workBlock++;
             }
@@ -207,7 +207,7 @@ void BlockCipher::getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYT
 
         
     }    
-    
+    blockCount++;
 }
 
 void BlockCipher::swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* key){
@@ -226,7 +226,9 @@ void BlockCipher::swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* 
             startPtr++;
             endPtr--;
             keyIncrement++;
-            if (keyIncrement > (BLOCK_SIZE_BYTES - 1)) {keyIncrement = 0;}
+            if (keyIncrement > (BLOCK_SIZE_BYTES - 1)) {
+                keyIncrement = 0;
+                }
            
         } else {
             startPtr++;
@@ -248,11 +250,15 @@ void BlockCipher::saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputF
     }
 }
 
-void BlockCipher::removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveSize){
+void BlockCipher::removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveSize, bool &endOfFileFlag){
+    int static blockCount = 0;
 
     for(int i = 0; i < BLOCK_SIZE_BITS; i++){
-        if (*(workBlock + i) == 129){
+        if (*(workBlock + i) == 0){
             saveSize--;
+            endOfFileFlag = true;
         }
     }
+
+    blockCount++;
 }
