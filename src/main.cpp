@@ -8,7 +8,7 @@ int main(int argc, char** argv){
     FILE* outputFile = NULL;
     FILE* keyFile = NULL;
 
-    Utilities::printArgs(argc, argv);
+    // Utilities::printArgs(argc, argv);
 
     printf("[Dan Butcher Programming Assignment 1]\n[CS356]\n");
     try {

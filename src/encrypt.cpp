@@ -170,20 +170,54 @@ void BlockCipher::encryptBlock(char* workBlock, const int BLOCK_SIZE_BYTES, char
 
         *(workBlock + i) = Utilities::getCharFromBinaryByte(charBuffer);
     }
-    
 }
 
 void StreamCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
-    
+    int const BUFFER_SIZE_IN_BYTES = 1;
+
+    char* key = Cipher::getKey(16, keyFile);
+    std::bitset<128> bitsetKey = Utilities::getBitsetFromChars(key, 16);
+    size_t keyIncrement = 0;
+
+    char buffer;
+    std::bitset<8> bitsetBuffer;
+    bool endOfFile = false;
+
+    char outputASCII;
+
+    try {
+        printf("[Starting Stream Cipher]");
+        
+        while(!endOfFile){
+            getBuffer(inputFile, BUFFER_SIZE_IN_BYTES, buffer, endOfFile);
+            bitsetBuffer = Utilities::getBinaryByteArrayFromInt((int)buffer);
+
+            for (size_t i = 0; i < (BUFFER_SIZE_IN_BYTES * 8); i++){
+                bitsetBuffer[i] = bitsetBuffer[i] ^ bitsetKey[keyIncrement];
+                keyIncrement++;
+
+                if (keyIncrement > 127) {
+                    keyIncrement = 0;
+                }
+            }
+
+            outputASCII = Utilities::getCharFromBinaryByte(bitsetBuffer);
+            if (!endOfFile){
+                saveBlock(&outputASCII, BUFFER_SIZE_IN_BYTES, outputFile);
+            }
+        }
+    } catch (...){
+        throw CipherException("streamCipher Encryption", "Error in StreamCipher::Encrypt");
+    }
+    printf("[Stream Cipher Complete]");  
 }
 
+// Encrypting is same as decrypting in stream cipher
 void StreamCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
-
+    encrypt(inputFile, outputFile, keyFile);
 }
 
 void BlockCipher::getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYTES, char* workBlock, bool &endOfFile){
-    int static blockCount = 0;
-
     char curChar;
     for (int i = 0; i < BLOCK_SIZE_BYTES; i++){
         curChar = fgetc(inputFile);
@@ -204,14 +238,10 @@ void BlockCipher::getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYT
             *workBlock = curChar;
             workBlock++;
         }
-
-        
     }    
-    blockCount++;
 }
 
 void BlockCipher::swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* key){
-
     char* startPtr = workBlock;
     char* endPtr = workBlock + (BLOCK_SIZE_BYTES - 1);
     char swapBuffer;
@@ -228,17 +258,14 @@ void BlockCipher::swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* 
             keyIncrement++;
             if (keyIncrement > (BLOCK_SIZE_BYTES - 1)) {
                 keyIncrement = 0;
-                }
-           
+            }
         } else {
             startPtr++;
         }
-
     }
-
 }
 
-void BlockCipher::saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile){
+void Cipher::saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile){
 
     try {
         for (int i = 0; i < BLOCK_SIZE_BYTES; i++){
@@ -246,7 +273,7 @@ void BlockCipher::saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputF
         }
 
     } catch(...){
-        throw CipherException(outputFile->_fileno, "Error saving block in BlockCipher::saveBlock");
+        throw CipherException(outputFile->_fileno, "Error saving block in Cipher::saveBlock");
     }
 }
 
@@ -261,4 +288,18 @@ void BlockCipher::removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveS
     }
 
     blockCount++;
+}
+
+void StreamCipher::getBuffer(FILE* inputFile, const int &BUFFER_SIZE_BYTES, char &buffer, bool &endOfFile){
+    char curChar;
+    for(size_t i = 0; i < BUFFER_SIZE_BYTES; i++){
+        curChar = fgetc(inputFile);
+        if (curChar == EOF){
+            endOfFile = true;
+            break;
+        } else {
+            buffer = curChar;
+        }
+            
+    }    
 }

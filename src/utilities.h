@@ -19,6 +19,7 @@ class Utilities{
         static std::bitset<8> getBinaryByteArrayFromInt(int byte);
         static std::bitset<128> getBitsetFromChars(char* string, int blockSize);
         static char getCharFromBinaryByte(std::bitset<8> binary);
+        
 
 };
 

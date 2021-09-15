@@ -26,6 +26,7 @@ class Cipher{
         mode cipherMode;
         int cipherID;
         char* getKey(int keySizeInBytes, FILE* keyFile);
+        void saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile);
         
 };
 
@@ -43,7 +44,6 @@ class BlockCipher:public Cipher{
         void getBlockWithPadding(FILE* inputFile, const int &BLOCK_SIZE_BYTES, char* workBlock, bool &endOfFile);
         void encryptBlock(char* workBlock, const int BLOCK_SIZE, char* key);
         void swapBytes(char* workBlock, int const &BLOCK_SIZE_BYTES, char* key);
-        void saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile);
         void removePadding(char* workBlock, int BLOCK_SIZE_BITS, int &saveSize, bool &endOfFile);
          
 };
@@ -56,7 +56,7 @@ class StreamCipher:public Cipher{
         void decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile);
 
     private:
+        void getBuffer(FILE* inputFile, const int &BUFFER_SIZE_BYTES, char &buffer, bool &endOfFile);
         
-
 };
 

@@ -1,6 +1,6 @@
 # Makefile for 356PA1
 # Dan Butcher
-
+# HEADER and HEADERFILES variables should probably be swapped for consistency.
 
 FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 HEADER_FILES = encrypt.h exception.h utilities.h
@@ -28,6 +28,8 @@ clean:
 	rm $(TARGET)
 
 package:
+	make build
+	tar -czvf $(TARGET).tar.gz $(TARGET) $(SOURCE_FILES) $(HEADERS) Makefile README.md
 
 testMake:
 	echo Source: $(SOURCE_FILES)

@@ -61,6 +61,11 @@
             "cwd": "/home/db/School/CS356-Security/CS356PA1",
             "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
             "binaryArgs": ["B", "${workspaceFolder}/newOutFile.txt", "${workspaceFolder}/testinDecrypt.txt", "${workspaceFolder}/key.txt", "D"]
+        },
+        {
+            "cwd": "/home/db/School/CS356-Security/CS356PA1",
+            "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
+            "binaryArgs": ["S", "./testin.txt", "./StreamOut.txt", "./key.txt", "E"]
         }
     ]
 }
