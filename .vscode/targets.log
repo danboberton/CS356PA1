@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Sep 14 14:28:23 2021
+# Make data base, printed on Tue Sep 14 20:35:32 2021
 
 # Variables
 
@@ -55,7 +55,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:49140
+JOURNAL_STREAM = 8:49363
 # makefile (from 'Makefile', line 11)
 CFLAGS = -I${SRC_FOLDER}
 # environment
@@ -65,7 +65,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 3889199042158720
+STARSHIP_SESSION_KEY = 2192867401364520
 # environment
 JAVA_HOME = //usr/lib/jdk/jdk-16.0.2
 # automatic
@@ -87,9 +87,9 @@ DBUS_SESSION_BUS_ADDRESS = unix:path=/run/user/1000/bus
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-MANAGERPID = 2042
+MANAGERPID = 1766
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-32ecdc2f-7590-4131-a70c-fffe5c3e3b86.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-2fe70ade-a0c6-41af-9c8e-8b335fef692a.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
@@ -103,7 +103,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/2269,unix/db-Linux:/tmp/.ICE-unix/2269
+SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/1987,unix/db-Linux:/tmp/.ICE-unix/1987
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -125,7 +125,7 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7aa628-8aa5-479f-8975-39db82160823&iid=ad7aa628-8aa5-479f-8975-39db82160823&sid=ad7aa628-8aa5-479f-8975-39db82160823","uploadToServer":true}
 # environment
-INVOCATION_ID = b78c2a98daed43b2ab475240d2ffcac7
+INVOCATION_ID = 73cfa11d0104453bb108de8e272f982f
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/74/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -153,7 +153,7 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2234
+SSH_AGENT_PID = 1952
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 9)
@@ -273,11 +273,11 @@ PAGER = less
 # environment
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f3cbf565_f025_45d6_b2b6_2e66f9cf099a
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/7005e541_d65d_4fbd_8835_6fb2aaf20c66
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.103
+GNOME_TERMINAL_SERVICE = :1.105
 # default
 SUFFIXES := 
 # environment
@@ -297,10 +297,9 @@ AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
 # environment
 LANG = C
 # environment
- 
 TERM = xterm-256color
 # environment
-VSCODE_PID = 4788
+VSCODE_PID = 4459
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
@@ -314,10 +313,11 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 
 # Directories
 
-# . (device 66305, inode 11276315): 14 files, no impossibilities.
+ 
+# . (device 66305, inode 11276315): 18 files, no impossibilities.
 # src (device 66305, inode 12190189): No files, no impossibilities so far.
 
-# 14 files, no impossibilities in 2 directories.
+# 18 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -411,12 +411,12 @@ testMake:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 32 / storage = 323 B / avg = 10 B
-# current buf: size = 8162 B / used = 323 B / count = 32 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 36 / storage = 394 B / avg = 10 B
+# current buf: size = 8162 B / used = 394 B / count = 36 / avg = 10 B
 
-# strcache performance: lookups = 41 / hit rate = 21%
+# strcache performance: lookups = 45 / hit rate = 20%
 # hash-table stats:
-# Load=32/8192=0%, Rehash=0, Collisions=1/41=2%
-# Finished Make data base on Tue Sep 14 14:28:23 2021
+# Load=36/8192=0%, Rehash=0, Collisions=1/45=2%
+# Finished Make data base on Tue Sep 14 20:35:32 2021
 
  

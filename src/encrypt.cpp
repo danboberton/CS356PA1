@@ -105,7 +105,7 @@ void BlockCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     catch(...){
         throw CipherException("blockCipher Encryption", "Error in BlockCipher::encrypt");
     }
-
+    delete[] key;
 }
 
 void BlockCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
@@ -130,12 +130,12 @@ void BlockCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     catch(...){
         throw CipherException("blockCipher Decryption", "Error in BlockCipher::decrypt");
     }
-
+    delete[] key;
 }
 
 char* Cipher::getKey(int sizeInBytes, FILE* keyFile){
     char* key = new char[sizeInBytes];
-    int c;
+    int c = 0;
     size_t keySizeCounter = 0;
 
     try{
@@ -144,9 +144,9 @@ char* Cipher::getKey(int sizeInBytes, FILE* keyFile){
             key[keySizeCounter] = c;
             keySizeCounter++;
         }
-        if (c == EOF) throw new CipherException(keySizeCounter, "Key too short.");
+        if (c == EOF) throw CipherException(keySizeCounter, "Key too short.");
     } catch(...){
-        throw new CipherException(keySizeCounter, "Error getting key.");
+        throw CipherException(keySizeCounter, "Error getting key.");
     }
     return key;
 }
