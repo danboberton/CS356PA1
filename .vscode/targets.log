@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Sep 14 20:35:32 2021
+# Make data base, printed on Tue Sep 14 22:36:12 2021
 
 # Variables
 
@@ -148,7 +148,7 @@ VSCODE_PIPE_LOGGING = true
 SNAP_INSTANCE_KEY = 
 # environment
 PWD = /home/db/School/CS356-Security/CS356PA1
-# makefile (from 'Makefile', line 15)
+# makefile (from 'Makefile', line 16)
 MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
 # default
 .LOADED := 
@@ -160,7 +160,7 @@ ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 OBJECTS_FOLDER = obj/
 # environment
 GTK_MODULES = gail:atk-bridge
-# makefile (from 'Makefile', line 14)
+# makefile (from 'Makefile', line 15)
 SOURCE_FILES = $(patsubst %, $(SRC_FOLDER)%, $(FILES))
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
@@ -180,7 +180,7 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 SNAP_CONTEXT = OjM8D5TgpvNa4xOb7KiMSGFzeIf1rmADohvVr1fZHDl7nrnJ9PVv
 # environment
 NVM_CD_FLAGS = -q
-# makefile (from 'Makefile', line 17)
+# makefile (from 'Makefile', line 18)
 HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
 # makefile (from 'Makefile', line 10)
 COMPILE = g++
@@ -290,10 +290,12 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
 .RECIPEPREFIX := 
-# makefile (from 'Makefile', line 16)
+# makefile (from 'Makefile', line 17)
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
 AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
+# makefile (from 'Makefile', line 21)
+TEST1_ARGS = 
 # environment
 LANG = C
 # environment
@@ -303,9 +305,10 @@ VSCODE_PID = 4459
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
+ 
 FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 # variable set hash-table stats:
-# Load=146/1024=14%, Rehash=0, Collisions=21/180=12%
+# Load=147/1024=14%, Rehash=0, Collisions=21/181=12%
 
 # Pattern-specific Variable Values
 
@@ -313,16 +316,15 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 
 # Directories
 
- 
-# . (device 66305, inode 11276315): 18 files, no impossibilities.
+# . (device 66305, inode 11276315): 22 files, no impossibilities.
 # src (device 66305, inode 12190189): No files, no impossibilities so far.
 
-# 18 files, no impossibilities in 2 directories.
+# 22 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
 obj/%.o: src/%.cpp src/encrypt.h src/exception.h src/utilities.h
-#  recipe to execute (from 'Makefile', line 20):
+#  recipe to execute (from 'Makefile', line 26):
 	@mkdir -p $(@D)
 	$(COMPILE) -c -g $< -o $@
 
@@ -358,15 +360,26 @@ obj/main.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-09-13 17:55:24.767209886
+#  Last modified 2021-09-14 22:36:01.078460231
 #  File has been updated.
 #  Successfully updated.
+
+test:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 46):
+	make build
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) S ./testin.txt ./StreamOut.txt key.txt E
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) S ./StreamOut.txt StreamDecrypt.txt key.txt D
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) B ./testin.txt ./newOutFile.txt key.txt E
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) B ./newOutFile.txt testinDecrypt.txt key.txt D
 
 build: obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 24):
+#  recipe to execute (from 'Makefile', line 30):
 	$(COMPILE) -g -o $(TARGET) $^ $(CFLAGS)
 
 # Not a target:
@@ -385,12 +398,15 @@ package:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 37):
+	make build
+	tar -czvf $(TARGET).tar.gz $(TARGET) $(SOURCE_FILES) $(HEADERS) Makefile README.md
 
 clean:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 27):
+#  recipe to execute (from 'Makefile', line 33):
 	rm -f $(OBJECTS_FOLDER)*.o
 	rm $(TARGET)
 
@@ -398,25 +414,25 @@ testMake:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 33):
+#  recipe to execute (from 'Makefile', line 41):
 	echo Source: $(SOURCE_FILES)
 	echo Objects: $(OBJECTS)
 	echo Headers: $(HEADERS)
 
 # files hash-table stats:
-# Load=12/1024=1%, Rehash=0, Collisions=0/26=0%
+# Load=13/1024=1%, Rehash=0, Collisions=0/27=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 36 / storage = 394 B / avg = 10 B
-# current buf: size = 8162 B / used = 394 B / count = 36 / avg = 10 B
+# strcache buffers: 1 (0) / strings = 41 / storage = 465 B / avg = 11 B
+# current buf: size = 8162 B / used = 465 B / count = 41 / avg = 11 B
 
-# strcache performance: lookups = 45 / hit rate = 20%
+# strcache performance: lookups = 51 / hit rate = 19%
 # hash-table stats:
-# Load=36/8192=0%, Rehash=0, Collisions=1/45=2%
-# Finished Make data base on Tue Sep 14 20:35:32 2021
+# Load=41/8192=1%, Rehash=0, Collisions=1/51=2%
+# Finished Make data base on Tue Sep 14 22:36:12 2021
 
  

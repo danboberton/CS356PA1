@@ -209,6 +209,7 @@ void StreamCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     } catch (...){
         throw CipherException("streamCipher Encryption", "Error in StreamCipher::Encrypt");
     }
+    delete[] key;
     printf("[Stream Cipher Complete]");  
 }
 
