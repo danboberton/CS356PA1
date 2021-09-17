@@ -1,5 +1,5 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:10: *** missing separator.  Stop.
+make: *** No rule to make target 'all'.  Stop.
  
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
@@ -8,11 +8,11 @@ Makefile:10: *** missing separator.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Sep 17 17:13:50 2021
+# Make data base, printed on Fri Sep 17 17:17:52 2021
 
 # Variables
 
-# environment
+# 'override' directive
 GNUMAKEFLAGS := 
 # automatic
 <D = $(patsubst %/,%,$(dir $<))
@@ -22,6 +22,8 @@ GNUMAKEFLAGS :=
 DESKTOP_SESSION = ubuntu
 # default
 .SHELLFLAGS := -c
+# makefile (from 'Makefile', line 13)
+INCLUDE_CPP_STDLIB = -lstdc++
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -34,6 +36,8 @@ VSCODE_LOG_NATIVE = false
 TARGET = DanB_356PA1
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
+# makefile (from 'Makefile', line 10)
+TEST_FOLDER = 
 # automatic
 @D = $(patsubst %/,%,$(dir $@))
 # environment
@@ -54,6 +58,8 @@ VTE_VERSION = 6003
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
 JOURNAL_STREAM = 8:51313
+# makefile (from 'Makefile', line 12)
+CFLAGS = -I${SRC_FOLDER}
 # environment
 XDG_CONFIG_DIRS = /etc/xdg/xdg-ubuntu:/etc/xdg
 # environment
@@ -112,6 +118,7 @@ MAKEFILE_LIST :=  Makefile
 BREAKPAD_DUMP_LOCATION = /home/db/.config/Code/exthost Crash Reports
 # environment
 SNAP_VERSION = 83bd43bc
+ 
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -144,6 +151,8 @@ VSCODE_PIPE_LOGGING = true
 SNAP_INSTANCE_KEY = 
 # environment
 PWD = /home/db/School/CS356-Security/CS356PA1
+# makefile (from 'Makefile', line 17)
+MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
 # default
 .LOADED := 
 # environment
@@ -154,6 +163,8 @@ ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 OBJECTS_FOLDER = obj/
 # environment
 GTK_MODULES = gail:atk-bridge
+# makefile (from 'Makefile', line 16)
+SOURCE_FILES = $(patsubst %, $(SRC_FOLDER)%, $(FILES))
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProcess
 # environment
@@ -172,6 +183,10 @@ SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd
 SNAP_CONTEXT = OjM8D5TgpvNa4xOb7KiMSGFzeIf1rmADohvVr1fZHDl7nrnJ9PVv
 # environment
 NVM_CD_FLAGS = -q
+# makefile (from 'Makefile', line 19)
+HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
+# makefile (from 'Makefile', line 11)
+COMPILE = g++
 # environment
 ZSH = /home/db/.oh-my-zsh
 # environment
@@ -209,7 +224,7 @@ USER = db
 # environment
 SNAP_REVISION = 74
 # makefile
-.DEFAULT_GOAL := 
+.DEFAULT_GOAL := build
 # environment
 XDG_CURRENT_DESKTOP = Unity
 # environment
@@ -259,6 +274,7 @@ SNAP_NAME = code
 # environment
 PAGER = less
 # environment
+ 
 LC_ALL = C
 # environment
 GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/cdbc9ed9_1627_4762_bab8_60be2b309526
@@ -278,8 +294,12 @@ WINDOWPATH = 2
 .INCLUDE_DIRS = /usr/include /usr/local/include /usr/include
 # default
 .RECIPEPREFIX := 
+# makefile (from 'Makefile', line 18)
+OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
 AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
+# makefile (from 'Makefile', line 22)
+TEST1_ARGS = 
 # environment
 LANG = C
 # environment
@@ -288,11 +308,10 @@ TERM = xterm-256color
 VSCODE_PID = 26803
 # environment
 STARSHIP_SHELL = zsh
- 
 # makefile (from 'Makefile', line 5)
 FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 # variable set hash-table stats:
-# Load=139/1024=14%, Rehash=0, Collisions=19/152=12%
+# Load=148/1024=14%, Rehash=0, Collisions=21/182=12%
 
 # Pattern-specific Variable Values
 
@@ -301,24 +320,77 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 # Directories
 
 # . (device 66305, inode 11276315): 22 files, no impossibilities.
+# src (device 66305, inode 12190189): No files, no impossibilities so far.
 
-# 22 files, no impossibilities in 1 directories.
+# 22 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
-# No implicit rules.
+obj/%.o: src/%.cpp src/encrypt.h src/exception.h src/utilities.h
+#  recipe to execute (from 'Makefile', line 27):
+	@mkdir -p $(@D)
+	$(COMPILE) -c -g $< -o $@
+
+# 1 implicit rules, 0 (0.0%) terminal.
 
 # Files
 
 # Not a target:
 all:
 #  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+obj/encrypt.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/exception.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test-ES:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test-DB:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/main.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
 # Not a target:
 Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2021-09-17 17:17:48.45018706
+#  File has been updated.
+#  Successfully updated.
+
+build: obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 31):
+	$(COMPILE) -g -o $(TARGET) $^ $(CFLAGS)
+
+test-DS:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+obj/utilities.o:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -329,20 +401,62 @@ Makefile:
 #  Modification time never checked.
 #  File has not been updated.
 
+package:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 38):
+	make build
+	tar -czvf $(TARGET).tar.gz $(TARGET) $(SOURCE_FILES) $(HEADERS) Makefile README.md
+
+clean:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 34):
+	rm -f $(OBJECTS_FOLDER)*.o
+	rm $(TARGET)
+ 
+
+testMake:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 42):
+	echo Source: $(SOURCE_FILES)
+	echo Objects: $(OBJECTS)
+	echo Headers: $(HEADERS)
+
+test-EB:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+test-valgrind:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 55):
+	make build
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) S ./testin.txt ./StreamOut.txt key.txt E
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) S ./StreamOut.txt StreamDecrypt.txt key.txt D
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) B ./testin.txt ./newOutFile.txt key.txt E
+	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) B ./newOutFile.txt testinDecrypt.txt key.txt D
+
 # files hash-table stats:
-# Load=4/1024=0%, Rehash=0, Collisions=0/5=0%
+# Load=17/1024=2%, Rehash=0, Collisions=0/31=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 27 / storage = 310 B / avg = 11 B
-# current buf: size = 8162 B / used = 310 B / count = 27 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 45 / storage = 506 B / avg = 11 B
+# current buf: size = 8162 B / used = 506 B / count = 45 / avg = 11 B
 
-# strcache performance: lookups = 31 / hit rate = 12%
+# strcache performance: lookups = 59 / hit rate = 23%
 # hash-table stats:
-# Load=27/8192=0%, Rehash=0, Collisions=1/31=3%
-# Finished Make data base on Fri Sep 17 17:13:50 2021
+# Load=45/8192=1%, Rehash=0, Collisions=1/59=2%
+# Finished Make data base on Fri Sep 17 17:17:52 2021
 
  

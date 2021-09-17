@@ -43,7 +43,23 @@ testMake:
 	echo Objects: $(OBJECTS)
 	echo Headers: $(HEADERS)
 
-test:
+KEY=key.txt
+PLAINTEXT_IN = inputPlaintext.txt
+ENCRYPTED_TEXT = encrypt.txt
+PLAINTEXT_OUT = outputPlaintext.txt
+test-ES:
+	./$(TARGET) S $(PLAINTEXT_IN) $(ENCRYPTED_TEXT) $(KEY) E
+
+test-EB:
+	./$(TARGET) B $(PLAINTEXT_IN) $(ENCRYPTED_TEXT) $(KEY) E
+
+test-DS:
+	./$(TARGET) S $(ENCRYPTED_TEXT) $(PLAINTEXT_OUT) $(KEY) D
+	
+test-DB:
+	./$(TARGET) B $(ENCRYPTED_TEXT) $(PLAINTEXT_OUT) $(KEY) D
+
+test-valgrind:
 	make build
 	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) S ./testin.txt ./StreamOut.txt key.txt E
 	valgrind -q --leak-check=full --show-leak-kinds=all --track-origins=yes --verbose ./$(TARGET) S ./StreamOut.txt StreamDecrypt.txt key.txt D

@@ -1,6 +1,5 @@
-make --dry-run --always-make --keep-going --print-directory
+make --dry-run --keep-going --print-directory
 make: Entering directory '/home/db/School/CS356-Security/CS356PA1'
+g++ -g -o DanB_356PA1 obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o -Isrc/
 make: Leaving directory '/home/db/School/CS356-Security/CS356PA1'
- 
-Makefile:10: *** missing separator.  Stop.
  
