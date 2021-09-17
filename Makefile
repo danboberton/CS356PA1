@@ -7,7 +7,7 @@ HEADER_FILES = encrypt.h exception.h utilities.h
 TARGET = DanB_356PA1
 SRC_FOLDER=src/
 OBJECTS_FOLDER=obj/
-TEST_FOLDER
+TEST_FOLDER=
 COMPILE = g++
 CFLAGS = -I${SRC_FOLDER}
 INCLUDE_CPP_STDLIB = -lstdc++

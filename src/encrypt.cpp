@@ -9,28 +9,15 @@ Arg Order:
 4 - keyfile
 5 - Mode of Operation (E, D)
 */
-Cipher::Cipher(){
+Cipher::Cipher(){}
 
-}
+BlockCipher::BlockCipher(){};
 
-// Cipher::~Cipher(){
-//     NULL;
-// }
+BlockCipher::~BlockCipher(){}
 
-BlockCipher::BlockCipher(){
-};
+StreamCipher::StreamCipher(){};
 
-BlockCipher::~BlockCipher(){
-
-}
-
-StreamCipher::StreamCipher(){
-
-};
-
-StreamCipher::~StreamCipher(){
-
-}
+StreamCipher::~StreamCipher(){}
 
 void Cipher::runCipher(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     
