@@ -5,6 +5,7 @@
 FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 HEADER_FILES = encrypt.h exception.h utilities.h
 TARGET = DanB_356PA1
+README=README.md
 SRC_FOLDER=src/
 OBJECTS_FOLDER=obj/
 TEST_FOLDER=
@@ -36,7 +37,7 @@ clean:
 
 package:
 	make build
-	tar -czvf $(TARGET).tar.gz $(TARGET) $(SOURCE_FILES) $(HEADERS) Makefile README.md
+	tar -czvf $(TARGET).tar.gz $(TARGET) $(SOURCE_FILES) $(HEADERS) Makefile $(README)
 
 testMake:
 	echo Source: $(SOURCE_FILES)

@@ -79,6 +79,7 @@ void BlockCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     bool endOfFile = false;
 
     try{
+        printf("[Starting Block Cipher Encryption]\n");
         while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
             encryptBlock(workBlock, BLOCK_SIZE_BYTES, key);
@@ -103,6 +104,7 @@ void BlockCipher::decrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     int saveSize = BLOCK_SIZE_BYTES;
 
     try{
+        printf("[Starting Block Cipher Decryption]\n");
         while(!endOfFile){
             getBlockWithPadding(inputFile, BLOCK_SIZE_BYTES, workBlock, endOfFile);
             swapBytes(workBlock, BLOCK_SIZE_BYTES, key);
@@ -173,7 +175,7 @@ void StreamCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     char outputASCII;
 
     try {
-        printf("[Starting Stream Cipher]");
+        printf("[Starting Stream Cipher]\n");
         
         while(!endOfFile){
             getBuffer(inputFile, BUFFER_SIZE_IN_BYTES, buffer, endOfFile);
@@ -197,7 +199,7 @@ void StreamCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
         throw CipherException("streamCipher Encryption", "Error in StreamCipher::Encrypt");
     }
     delete[] key;
-    printf("[Stream Cipher Complete]");  
+    printf("[Stream Cipher Complete]\n");  
 }
 
 // Encrypting is same as decrypting in stream cipher
