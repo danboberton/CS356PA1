@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
- 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Sep 19 21:42:26 2021
+# Make data base, printed on Sat Oct 30 12:17:25 2021
 
 # Variables
 
@@ -47,17 +45,17 @@ GDMSESSION = ubuntu
 # environment
 XMODIFIERS = @im=ibus
 # makefile
-CURDIR := /home/db/School/CS356-Security/EncryptRestart
+CURDIR := /home/db/School/CS356-Security/CS356PA1
 # makefile
 SHELL = /bin/sh
 # environment
-SNAP_DATA = /var/snap/code/74
+SNAP_DATA = /var/snap/code/78
 # environment
 VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:52440
+JOURNAL_STREAM = 8:49015
 # makefile (from 'Makefile', line 13)
 CFLAGS = -I${SRC_FOLDER}
 # environment
@@ -67,9 +65,9 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 1179225646252832
+STARSHIP_SESSION_KEY = 3139621322749417
 # environment
-JAVA_HOME = //usr/lib/jdk/jdk-16.0.2
+JAVA_HOME = /home/db/.jdks/corretto-11.0.12
 # automatic
 @F = $(notdir $@)
 # environment
@@ -91,17 +89,17 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 8)
 README = README.md
 # environment
-MANAGERPID = 1832
+MANAGERPID = 1726
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-889a5cdf-22e6-4d26-b77f-acb12be4dd6a.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0ddb15e6-9121-434e-bdb7-99e1a03938ab.sock
 # environment
-VSCODE_CWD = /home/db/School/CS356-Security/EncryptRestart
+VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
-GSETTINGS_SCHEMA_DIR = /snap/code/74/usr/share/glib-2.0/schemas
+GSETTINGS_SCHEMA_DIR = /snap/code/78/usr/share/glib-2.0/schemas
 # default
 MAKE_HOST := x86_64-pc-linux-gnu
 # environment
-PATH = /home/db/.autojump/bin://usr/lib/jdk/jdk-16.0.2/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+PATH = /home/db/.autojump/bin:/home/db/.jdks/corretto-11.0.12/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
 # makefile (from 'Makefile', line 49)
 ENCRYPTED_TEXT = encrypt.txt
 # environment
@@ -109,19 +107,17 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Linux:@/tmp/.ICE-unix/2053,unix/db-Linux:/tmp/.ICE-unix/2053
+SESSION_MANAGER = local/db-Thinkpad:@/tmp/.ICE-unix/1962,unix/db-Thinkpad:/tmp/.ICE-unix/1962
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
 GDK_PIXBUF_MODULE_FILE = /home/db/snap/code/common/.cache/gdk-pixbuf-loaders.cache
 # environment
-SNAP = /snap/code/74
+SNAP = /snap/code/78
 # makefile (from 'Makefile', line 1)
 MAKEFILE_LIST :=  Makefile
 # environment
-BREAKPAD_DUMP_LOCATION = /home/db/.config/Code/exthost Crash Reports
-# environment
-SNAP_VERSION = 83bd43bc
+SNAP_VERSION = 6cba118a
 # environment
 XDG_MENU_PREFIX = gnome-
 # environment
@@ -129,11 +125,11 @@ VSCODE_LOG_STACK = false
 # environment
 DISABLE_WAYLAND = 1
 # environment
-VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=ad7aa628-8aa5-479f-8975-39db82160823&iid=ad7aa628-8aa5-479f-8975-39db82160823&sid=ad7aa628-8aa5-479f-8975-39db82160823","uploadToServer":true}
+VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28&iid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28&sid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28","uploadToServer":true}
 # environment
-INVOCATION_ID = 727f1686825e4375830f21054bdb8688
+INVOCATION_ID = d6f12f870947459c819ae0656279dfa4
 # environment
-GDK_PIXBUF_MODULEDIR = /snap/code/74/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
+GDK_PIXBUF_MODULEDIR = /snap/code/78/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell archives jobserver output-sync check-symlink load
 # environment
@@ -147,7 +143,7 @@ SSH_AUTH_SOCK = /run/user/1000/keyring/ssh
 # automatic
 %F = $(notdir $%)
 # environment
-DISPLAY = :1
+DISPLAY = :0
 # makefile (from 'Makefile', line 48)
 PLAINTEXT_IN = inputPlaintext.txt
 # environment
@@ -155,13 +151,13 @@ VSCODE_PIPE_LOGGING = true
 # environment
 SNAP_INSTANCE_KEY = 
 # environment
-PWD = /home/db/School/CS356-Security/EncryptRestart
+PWD = /home/db/School/CS356-Security/CS356PA1
 # makefile (from 'Makefile', line 18)
 MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES)) 
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 2017
+SSH_AGENT_PID = 1915
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 10)
@@ -175,9 +171,11 @@ VSCODE_AMD_ENTRYPOINT = vs/workbench/services/extensions/node/extensionHostProce
 # environment
 HOME = /home/db
 # environment
+XDG_CACHE_HOME = /home/db/.cache
+# environment
 VSCODE_CLI = 1
 # environment
-VSCODE_CODE_CACHE_PATH = /home/db/.config/Code/CachedData/83bd43bc519d15e50c4272c6cf5c1479df196a4d
+VSCODE_CODE_CACHE_PATH = /home/db/.config/Code/CachedData/6cba118ac49a1b88332f312a8f67186f7f3c1643
 # environment
 LOGNAME = db
 # environment
@@ -185,9 +183,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # environment
 SNAP_LIBRARY_PATH = /var/lib/snapd/lib/gl:/var/lib/snapd/lib/gl32:/var/lib/snapd/void
 # environment
-SNAP_CONTEXT = OjM8D5TgpvNa4xOb7KiMSGFzeIf1rmADohvVr1fZHDl7nrnJ9PVv
-# environment
-NVM_CD_FLAGS = -q
+SNAP_CONTEXT = KigGzmOiWqeuPHblMCRuk0HVOgwz9-u-flkFgwxyloIDXK37LJqs
 # makefile (from 'Makefile', line 20)
 HEADERS = $(patsubst %, $(SRC_FOLDER)%, $(HEADER_FILES))
 # makefile (from 'Makefile', line 12)
@@ -217,7 +213,7 @@ MAKECMDGOALS := all
 # environment
 QT_IM_MODULE = ibus
 # environment
-SNAP_USER_DATA = /home/db/snap/code/74
+SNAP_USER_DATA = /home/db/snap/code/78
 # environment
 SHLVL = 1
 # environment
@@ -227,7 +223,7 @@ MAKE_VERSION := 4.2.1
 # environment
 USER = db
 # environment
-SNAP_REVISION = 74
+SNAP_REVISION = 78
 # makefile
 .DEFAULT_GOAL := build
 # environment
@@ -237,16 +233,15 @@ LESS = -R
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # default
- 
 MAKE_COMMAND := make
 # environment
-OLDPWD = /home/db/School/CS356-Security
+OLDPWD = /home/db
 # default
 .VARIABLES := 
 # automatic
 *F = $(notdir $*)
 # environment
-VSCODE_IPC_HOOK = /run/user/1000/vscode-2a5c2638-1.60.1-main.sock
+VSCODE_IPC_HOOK = /run/user/1000/vscode-2a5c2638-1.61.2-main.sock
 # makefile
 MAKEFLAGS = pqrR
 # environment
@@ -254,7 +249,7 @@ MFLAGS = -pqrR
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
-NVM_DIR = /home/db/.nvm
+BREAKPAD_DUMP_LOCATION = /home/db/.config/Code/exthost Crash Reports
 # makefile (from 'Makefile', line 6)
 HEADER_FILES = encrypt.h exception.h utilities.h
 # automatic
@@ -270,7 +265,7 @@ DEFAULTS_PATH = /usr/share/gconf/ubuntu.default.path
 # default
 MAKEFILES := 
 # environment
-SNAP_COOKIE = OjM8D5TgpvNa4xOb7KiMSGFzeIf1rmADohvVr1fZHDl7nrnJ9PVv
+SNAP_COOKIE = KigGzmOiWqeuPHblMCRuk0HVOgwz9-u-flkFgwxyloIDXK37LJqs
 # automatic
 <F = $(notdir $<)
 # environment
@@ -280,13 +275,18 @@ SNAP_NAME = code
 # environment
 PAGER = less
 # environment
+ 
+make: *** No rule to make target 'all'.  Stop.
+ 
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/2ed68f7e_19e2_436a_984e_60fd807e7315
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f5bc3a54_de7f_44b2_9382_7d667bec32c1
 # automatic
 ^F = $(notdir $^)
 # environment
-GNOME_TERMINAL_SERVICE = :1.185
+XDG_DATA_HOME = /home/db/.local/share
+# environment
+GNOME_TERMINAL_SERVICE = :1.99
 # default
 SUFFIXES := 
 # environment
@@ -312,7 +312,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 68760
+VSCODE_PID = 11407
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
@@ -320,7 +320,7 @@ FILES = encrypt.cpp exception.cpp utilities.cpp main.cpp
 # makefile (from 'Makefile', line 50)
 PLAINTEXT_OUT = outputPlaintext.txt
 # variable set hash-table stats:
-# Load=153/1024=15%, Rehash=0, Collisions=23/187=12%
+# Load=153/1024=15%, Rehash=0, Collisions=22/187=12%
 
 # Pattern-specific Variable Values
 
@@ -328,10 +328,10 @@ PLAINTEXT_OUT = outputPlaintext.txt
 
 # Directories
 
-# . (device 66305, inode 3818012): 17 files, no impossibilities.
-# src (device 66305, inode 3933820): No files, no impossibilities so far.
+# . (device 66309, inode 6816298): 19 files, no impossibilities.
+# src (device 66309, inode 6816504): No files, no impossibilities so far.
 
-# 17 files, no impossibilities in 2 directories.
+# 19 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -386,7 +386,7 @@ obj/main.o:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2021-09-19 21:40:23.090600001
+#  Last modified 2021-10-30 12:16:43.407185453
 #  File has been updated.
 #  Successfully updated.
 
@@ -421,7 +421,6 @@ package:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
- 
 #  recipe to execute (from 'Makefile', line 39):
 	make build
 	tar -czvf $(TARGET).tar.gz $(TARGET) $(SOURCE_FILES) $(HEADERS) Makefile $(README)
@@ -469,12 +468,12 @@ test-valgrind:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 40 / storage = 442 B / avg = 11 B
-# current buf: size = 8162 B / used = 442 B / count = 40 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 42 / storage = 466 B / avg = 11 B
+# current buf: size = 8162 B / used = 466 B / count = 42 / avg = 11 B
 
-# strcache performance: lookups = 54 / hit rate = 25%
+# strcache performance: lookups = 56 / hit rate = 25%
 # hash-table stats:
-# Load=40/8192=0%, Rehash=0, Collisions=1/54=2%
-# Finished Make data base on Sun Sep 19 21:42:26 2021
+# Load=42/8192=1%, Rehash=0, Collisions=1/56=2%
+# Finished Make data base on Sat Oct 30 12:17:25 2021
 
  

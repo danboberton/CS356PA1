@@ -1,5 +1,5 @@
-make --dry-run --keep-going --print-directory
-make: Entering directory '/home/db/School/CS356-Security/EncryptRestart'
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/db/School/CS356-Security/CS356PA1'
 mkdir -p obj
 g++ -c -g src/encrypt.cpp -o obj/encrypt.o
 mkdir -p obj
@@ -9,5 +9,5 @@ g++ -c -g src/utilities.cpp -o obj/utilities.o
 mkdir -p obj
 g++ -c -g src/main.cpp -o obj/main.o
 g++ -g -o DanB_356PA1 obj/encrypt.o obj/exception.o obj/utilities.o obj/main.o -Isrc/
-make: Leaving directory '/home/db/School/CS356-Security/EncryptRestart'
+make: Leaving directory '/home/db/School/CS356-Security/CS356PA1'
  
