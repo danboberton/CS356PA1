@@ -142,7 +142,7 @@ char* Cipher::getKey(int sizeInBytes, FILE* keyFile){
 }
 
 std::string* Cipher::getStreamKey(FILE* keyFile){
-    char keyChar[60];
+    char keyChar[60] = {0};
     fgets(keyChar, 60, keyFile);
     std::string* key = new std::string(keyChar);
    
@@ -174,42 +174,35 @@ void StreamCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     int const BUFFER_SIZE_IN_BYTES = 1;
 
     std::string* streamKey = Cipher::getStreamKey(keyFile);
-    printf("key is: %s", streamKey->c_str());
-    char* key = Cipher::getKey(16, keyFile);
-    std::bitset<128> bitsetKey = Utilities::getBitsetFromChars(key, 16);
     size_t keyIncrement = 0;
 
     char buffer;
-    std::bitset<8> bitsetBuffer;
     bool endOfFile = false;
-
+    char encryptedChar;
     char outputASCII;
+    int keyLength = streamKey->length();
 
     try {
         printf("[Starting Stream Cipher]\n");
         
         while(!endOfFile){
             getBuffer(inputFile, BUFFER_SIZE_IN_BYTES, buffer, endOfFile);
-            bitsetBuffer = Utilities::getBinaryByteArrayFromInt((int)buffer);
 
-            for (size_t i = 0; i < (BUFFER_SIZE_IN_BYTES * 8); i++){
-                bitsetBuffer[i] = bitsetBuffer[i] ^ bitsetKey[keyIncrement];
-                keyIncrement++;
+            encryptedChar = buffer ^ streamKey->at(keyIncrement);
+            keyIncrement++;
 
-                if (keyIncrement > 127) {
-                    keyIncrement = 0;
-                }
+            if (keyIncrement > (keyLength - 1)) {
+                keyIncrement = 0;
             }
 
-            outputASCII = Utilities::getCharFromBinaryByte(bitsetBuffer);
             if (!endOfFile){
-                saveBlock(&outputASCII, BUFFER_SIZE_IN_BYTES, outputFile);
+                saveBlock(&encryptedChar, BUFFER_SIZE_IN_BYTES, outputFile);
             }
         }
     } catch (...){
         throw CipherException("streamCipher Encryption", "Error in StreamCipher::Encrypt");
     }
-    delete[] key;
+    // delete streamKey;
     printf("[Stream Cipher Complete]\n");  
 }
 

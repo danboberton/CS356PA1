@@ -1,6 +1,4 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
-make: *** No rule to make target 'all'.  Stop.
- 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -8,7 +6,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Oct 31 11:24:17 2021
+# Make data base, printed on Sun Oct 31 22:59:50 2021
 
 # Variables
 
@@ -57,7 +55,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:55552
+JOURNAL_STREAM = 8:103082
 # makefile (from 'Makefile', line 13)
 CFLAGS = -I${SRC_FOLDER}
 # environment
@@ -67,7 +65,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 2576121129561151
+STARSHIP_SESSION_KEY = 3523157752505942
 # environment
 JAVA_HOME = /home/db/.jdks/corretto-11.0.12
 # automatic
@@ -91,9 +89,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 8)
 README = README.md
 # environment
-MANAGERPID = 1739
+MANAGERPID = 2316
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-bcaf9161-a253-4e39-add3-35c85e297652.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-19640800-9c93-409f-876b-0cb1c594f092.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
@@ -109,7 +107,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Thinkpad:@/tmp/.ICE-unix/1969,unix/db-Thinkpad:/tmp/.ICE-unix/1969
+SESSION_MANAGER = local/db-Thinkpad:@/tmp/.ICE-unix/2713,unix/db-Thinkpad:/tmp/.ICE-unix/2713
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -129,7 +127,7 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28&iid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28&sid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28","uploadToServer":true}
 # environment
-INVOCATION_ID = 0bf339e6a98b43108cd0222162dce39e
+INVOCATION_ID = 1b7ed3c5250a4a03904b70f36b8cd404
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/78/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -159,7 +157,7 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1926
+SSH_AGENT_PID = 2634
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 10)
@@ -277,9 +275,12 @@ SNAP_NAME = code
 # environment
 PAGER = less
 # environment
+ 
+make: *** No rule to make target 'all'.  Stop.
+ 
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5acdfea5_5e18_4da3_80c2_14fb26dd2c0b
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/a307d3bf_3af9_4331_8e83_4061d69eb469
 # automatic
 ^F = $(notdir $^)
 # environment
@@ -303,7 +304,6 @@ KEY = key.txt
 # makefile (from 'Makefile', line 19)
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
- 
 AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
 # makefile (from 'Makefile', line 23)
 TEST1_ARGS = 
@@ -312,7 +312,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 5371
+VSCODE_PID = 5652
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
@@ -328,10 +328,10 @@ PLAINTEXT_OUT = outputPlaintext.txt
 
 # Directories
 
-# . (device 66309, inode 6816298): 21 files, no impossibilities.
+# . (device 66309, inode 6816298): 22 files, no impossibilities.
 # src (device 66309, inode 6816504): No files, no impossibilities so far.
 
-# 21 files, no impossibilities in 2 directories.
+# 22 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -468,12 +468,12 @@ test-valgrind:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 44 / storage = 489 B / avg = 11 B
-# current buf: size = 8162 B / used = 489 B / count = 44 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 45 / storage = 504 B / avg = 11 B
+# current buf: size = 8162 B / used = 504 B / count = 45 / avg = 11 B
 
-# strcache performance: lookups = 58 / hit rate = 24%
+# strcache performance: lookups = 59 / hit rate = 23%
 # hash-table stats:
-# Load=44/8192=1%, Rehash=0, Collisions=1/58=2%
-# Finished Make data base on Sun Oct 31 11:24:17 2021
+# Load=45/8192=1%, Rehash=0, Collisions=1/59=2%
+# Finished Make data base on Sun Oct 31 22:59:50 2021
 
  

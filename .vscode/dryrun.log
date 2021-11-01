@@ -1,10 +1,9 @@
-make build --dry-run --keep-going --print-directory
+make build --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/db/School/CS356-Security/CS356PA1'
 mkdir -p obj
 g++ -c -g src/encrypt.cpp -o obj/encrypt.o
 mkdir -p obj
 g++ -c -g src/exception.cpp -o obj/exception.o
- 
 mkdir -p obj
 g++ -c -g src/utilities.cpp -o obj/utilities.o
 mkdir -p obj
