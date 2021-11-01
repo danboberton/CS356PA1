@@ -1,5 +1,6 @@
 #include "encrypt.h"
 #include "exception.h"
+#include <string.h>
 
 /*
 Arg Order:
@@ -140,6 +141,14 @@ char* Cipher::getKey(int sizeInBytes, FILE* keyFile){
     return key;
 }
 
+std::string* Cipher::getStreamKey(FILE* keyFile){
+    char keyChar[60];
+    fgets(keyChar, 60, keyFile);
+    std::string* key = new std::string(keyChar);
+   
+    return key;
+}
+
 void BlockCipher::encryptBlock(char* workBlock, const int BLOCK_SIZE_BYTES, char* key){
     const size_t BLOCK_SIZE_BITS = BLOCK_SIZE_BYTES * 8;
     
@@ -164,6 +173,8 @@ void BlockCipher::encryptBlock(char* workBlock, const int BLOCK_SIZE_BYTES, char
 void StreamCipher::encrypt(FILE* inputFile, FILE* outputFile, FILE* keyFile){
     int const BUFFER_SIZE_IN_BYTES = 1;
 
+    std::string* streamKey = Cipher::getStreamKey(keyFile);
+    printf("key is: %s", streamKey->c_str());
     char* key = Cipher::getKey(16, keyFile);
     std::bitset<128> bitsetKey = Utilities::getBitsetFromChars(key, 16);
     size_t keyIncrement = 0;

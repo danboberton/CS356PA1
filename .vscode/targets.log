@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+ 
 # GNU Make 4.2.1
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2016 Free Software Foundation, Inc.
@@ -6,7 +8,7 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Oct 30 12:17:25 2021
+# Make data base, printed on Sun Oct 31 11:24:17 2021
 
 # Variables
 
@@ -55,7 +57,7 @@ VTE_VERSION = 6003
 # environment
 VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
 # environment
-JOURNAL_STREAM = 8:49015
+JOURNAL_STREAM = 8:55552
 # makefile (from 'Makefile', line 13)
 CFLAGS = -I${SRC_FOLDER}
 # environment
@@ -65,7 +67,7 @@ SNAP_INSTANCE_NAME = code
 # environment
 SNAP_ARCH = amd64
 # environment
-STARSHIP_SESSION_KEY = 3139621322749417
+STARSHIP_SESSION_KEY = 2576121129561151
 # environment
 JAVA_HOME = /home/db/.jdks/corretto-11.0.12
 # automatic
@@ -89,9 +91,9 @@ VSCODE_VERBOSE_LOGGING = true
 # makefile (from 'Makefile', line 8)
 README = README.md
 # environment
-MANAGERPID = 1726
+MANAGERPID = 1739
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-0ddb15e6-9121-434e-bdb7-99e1a03938ab.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-bcaf9161-a253-4e39-add3-35c85e297652.sock
 # environment
 VSCODE_CWD = /home/db/School/CS356-Security/CS356PA1
 # environment
@@ -107,7 +109,7 @@ GPG_AGENT_INFO = /run/user/1000/gnupg/S.gpg-agent:0:1
 # environment
 LSCOLORS = Gxfxcxdxbxegedabagacad
 # environment
-SESSION_MANAGER = local/db-Thinkpad:@/tmp/.ICE-unix/1962,unix/db-Thinkpad:/tmp/.ICE-unix/1962
+SESSION_MANAGER = local/db-Thinkpad:@/tmp/.ICE-unix/1969,unix/db-Thinkpad:/tmp/.ICE-unix/1969
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
@@ -127,7 +129,7 @@ DISABLE_WAYLAND = 1
 # environment
 VSCODE_CRASH_REPORTER_START_OPTIONS = {"companyName":"Microsoft","productName":"VSCode","submitURL":"appcenter://code?aid=fba07a4d-84bd-4fc8-a125-9640fc8ce171&uid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28&iid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28&sid=911eaeaf-bf63-4a79-a68e-1c8ac184cc28","uploadToServer":true}
 # environment
-INVOCATION_ID = d6f12f870947459c819ae0656279dfa4
+INVOCATION_ID = 0bf339e6a98b43108cd0222162dce39e
 # environment
 GDK_PIXBUF_MODULEDIR = /snap/code/78/usr/lib/x86_64-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders
 # default
@@ -157,7 +159,7 @@ MAKE_OBJECTS = $(patsubst %.cpp, %.o, $(FILES))
 # default
 .LOADED := 
 # environment
-SSH_AGENT_PID = 1915
+SSH_AGENT_PID = 1926
 # environment
 ORIGINAL_XDG_CURRENT_DESKTOP = ubuntu:GNOME
 # makefile (from 'Makefile', line 10)
@@ -275,18 +277,15 @@ SNAP_NAME = code
 # environment
 PAGER = less
 # environment
- 
-make: *** No rule to make target 'all'.  Stop.
- 
 LC_ALL = C
 # environment
-GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/f5bc3a54_de7f_44b2_9382_7d667bec32c1
+GNOME_TERMINAL_SCREEN = /org/gnome/Terminal/screen/5acdfea5_5e18_4da3_80c2_14fb26dd2c0b
 # automatic
 ^F = $(notdir $^)
 # environment
 XDG_DATA_HOME = /home/db/.local/share
 # environment
-GNOME_TERMINAL_SERVICE = :1.99
+GNOME_TERMINAL_SERVICE = :1.96
 # default
 SUFFIXES := 
 # environment
@@ -304,6 +303,7 @@ KEY = key.txt
 # makefile (from 'Makefile', line 19)
 OBJECTS = $(patsubst %,$(OBJECTS_FOLDER)%,$(MAKE_OBJECTS))
 # environment
+ 
 AUTOJUMP_ERROR_PATH = /home/db/.local/share/autojump/errors.log
 # makefile (from 'Makefile', line 23)
 TEST1_ARGS = 
@@ -312,7 +312,7 @@ LANG = C
 # environment
 TERM = xterm-256color
 # environment
-VSCODE_PID = 11407
+VSCODE_PID = 5371
 # environment
 STARSHIP_SHELL = zsh
 # makefile (from 'Makefile', line 5)
@@ -328,10 +328,10 @@ PLAINTEXT_OUT = outputPlaintext.txt
 
 # Directories
 
-# . (device 66309, inode 6816298): 19 files, no impossibilities.
+# . (device 66309, inode 6816298): 21 files, no impossibilities.
 # src (device 66309, inode 6816504): No files, no impossibilities so far.
 
-# 19 files, no impossibilities in 2 directories.
+# 21 files, no impossibilities in 2 directories.
 
 # Implicit Rules
 
@@ -468,12 +468,12 @@ test-valgrind:
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 42 / storage = 466 B / avg = 11 B
-# current buf: size = 8162 B / used = 466 B / count = 42 / avg = 11 B
+# strcache buffers: 1 (0) / strings = 44 / storage = 489 B / avg = 11 B
+# current buf: size = 8162 B / used = 489 B / count = 44 / avg = 11 B
 
-# strcache performance: lookups = 56 / hit rate = 25%
+# strcache performance: lookups = 58 / hit rate = 24%
 # hash-table stats:
-# Load=42/8192=1%, Rehash=0, Collisions=1/56=2%
-# Finished Make data base on Sat Oct 30 12:17:25 2021
+# Load=44/8192=1%, Rehash=0, Collisions=1/58=2%
+# Finished Make data base on Sun Oct 31 11:24:17 2021
 
  

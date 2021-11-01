@@ -26,6 +26,7 @@ class Cipher{
         mode cipherMode;
         int cipherID;
         char* getKey(int keySizeInBytes, FILE* keyFile);
+        std::string* getStreamKey(FILE* keyFile);
         void saveBlock(char* workBlock, int BLOCK_SIZE_BYTES, FILE* outputFile);
         
 };

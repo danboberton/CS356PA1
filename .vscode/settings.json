@@ -66,6 +66,11 @@
             "cwd": "/home/db/School/CS356-Security/CS356PA1",
             "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
             "binaryArgs": ["S", "./testin.txt", "./StreamOut.txt", "./key.txt", "E"]
+        },
+        {
+            "cwd": "/home/db/School/CS356-Security/CS356PA1",
+            "binaryPath": "/home/db/School/CS356-Security/CS356PA1/DanB_356PA1",
+            "binaryArgs": ["S", "test/Stream Cipher/2/input2.txt", "test/Stream Cipher/2/dbOutDecrypt2.txt", "test/Stream Cipher/2/key4.txt", "E"]
         }
     ]
 }
